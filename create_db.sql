@@ -1,3 +1,20 @@
 CREATE TABLE question ()
 CREATE TABLE answer ()
-CREATE TABLE result ()
+CREATE TABLE prom(
+  IDprom INTEGER AUTO_INCREMENT PRIMARY KEY,
+  promName VARCHAR(3)
+)
+CREATE TABLE student(
+  IDstudent INTEGER AUTO_INCREMENT PRIMARY KEY,
+  firstname VARCHAR(30),
+  lastname VARCHAR(30),
+  login VARCHAR(20),
+  password VARCHAR(20),
+  prom INTEGER REFERENCES prom(IDprom)
+)
+CREATE TABLE session(
+  IDsession INTEGER AUTO_INCREMENT PRIMARY KEY,
+  code INTEGER,
+  year DATE,
+  prom INTEGER REFERENCES prom(IDprom)
+)
