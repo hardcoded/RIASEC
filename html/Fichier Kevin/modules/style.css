@@ -1,0 +1,67 @@
+#logo{
+	text-align: center;
+	font-size:2em;
+}
+#contenu{
+	display:inline-block;
+
+}
+#left-bar{
+	display:inline-block;
+
+}
+.texteEnBleu{
+	color:blue;
+}
+#article a{
+	color:green;
+
+}
+#Titre{
+	text-align: center;
+	color:#DD5533;
+	font-size: 2em;
+	font-family : "Comic Sans MS", Impact, Verdana
+}
+#Titre a{
+	text-decoration: none;
+	color:#DD5533;
+}
+#menu{
+	border : 3px blue groove;
+	border-radius: 10px;
+	border-color: #DD5533;
+	color : black;
+	box-shadow: 6px 6px 6px #DD5555;
+	float: left;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+
+}
+
+#menu p a{
+	font-size : 0.9em;
+	font-style : italic;
+	text-decoration: none;
+	text-align: right;
+}
+
+#regles{
+	clear: both;
+	text-align: center;
+}
+
+#regles a:hover
+{
+	color : red;
+	text-shadow: 3px 3px 3px #DD5555
+
+}
+
+body
+{
+	background-color: #FFFFFF;
+	color: rgb(185,1,150);
+
+}

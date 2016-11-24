@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Swipe</title>
+
+<script src="bar.js"></script>
+<script src="hexagone.js"></script>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<link href='style.css' rel='stylesheet'/>
+
+
+</head>
+<body>
+<div id='mySwipe' style='max-width:500px;margin:0 auto' class='swipe'>
+  <div class='swipe-wrap'>
+
+    <div>
+            <canvas id="bar" width="500" height="500">
+                Message pour les navigateurs ne supportant pas encore canvas.
+            </canvas>
+    </div>
+
+
+
+    <div>
+            <canvas id="hexagone" width="500" height="500">
+                Message pour les navigateurs ne supportant pas encore canvas.
+            </canvas>
+    </div>
+
+
+  </div>
+</div>
+
+<script src='swipe.js'></script>
+<script src='slide.js'></script>
+
+<div style='text-align:center;padding-top:20px;'>
+
+<button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
+  <!--<button onclick='change()'>Change</button>-->
+
+</div>
