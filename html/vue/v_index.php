@@ -32,7 +32,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Connexion</h4>
+        <h4 class="modal-title">Connection</h4>
       </div>
       <div class="modal-body">
 	   		<input type="text" class="form-control" placeholder="Identifiant" id="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
@@ -40,12 +40,36 @@
 	   		<span type="button" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;">Se connecter</span>
       </div>
       <div class="modal-footer">
+      	<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#modalLoginAdmin" >Je suis admin</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- Modal Login ADMIN -->
+<div id="modalLoginAdmin" class="modal fade" role="dialog">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #2c3e50;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="color:#ecf0f1;">Connection Admin</h4>
+      </div>
+      <div class="modal-body" style="background-color: #2c3e50;">
+	   		<input type="text" class="form-control" placeholder="Identifiant" id="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
+	   		<input type="password" class="form-control" placeholder="Mot de passe" id="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
+	   		<span type="button" class="boutton" style="background-color: #27ae60 ; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;">Se connecter</span>
+      </div>
+      <div class="modal-footer" style="background-color: #2c3e50;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <!-- Modal Register -->
 <div id="modalRegister" class="modal fade" role="dialog">
   <div class="modal-dialog">
