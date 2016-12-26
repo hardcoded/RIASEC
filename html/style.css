@@ -3,31 +3,42 @@
 
 /*basic reset*/
 * {margin: 0; padding: 0;}
-body{
-	background-image: url("http://eidupont.scene7.com/is/image/eidupont/Everest_690x345_630x315");
-	background-color: black; 
-	background-repeat: repeat;
-    background-attachment: fixed;
+body{ 
 	font-family: montserrat, arial, verdana;
 }
 .titre{
 	display: block;
-	width: 50%;
+	width: 100%;
 	text-align: center;
 	margin: auto;
-	color: blue;
+	background-color: #2c3e50; 
+	color: #ecf0f1;
 	font-size: 8em;
 }
 .sousTitre{
 	text-align: center;
 	font-size: 50%;
-	color:green;
+	color:#ecf0f1;
 }
 
 .buttonHandler{
 	display: block;
-	size:50%;
+	size:100%;
+	text-align: center;
+	margin: auto;
 
+}
+.boutton{
+	background-color: #95a5a6;
+	padding: 1em 1em 1em 1em;
+	font-size: 1.2em;
+	color:#ecf0f1;
+	display: block;
+	width:45%;
+	border-radius: 10px;
+	text-align: center;
+	margin: 1em auto 0em auto;
+	cursor: pointer;
 }
 table
 {
