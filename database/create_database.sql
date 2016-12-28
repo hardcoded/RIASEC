@@ -1,64 +1,65 @@
-CREATE TABLE `Answer` (
-	`ID_Answer` INT NOT NULL,
-	`Degree` INT NOT NULL,
-	`ID_Question` INT NOT NULL,
-	`ID_Student` INT NOT NULL,
-	PRIMARY KEY (`ID_Answer`)
+CREATE TABLE student (
+  ID_student INTEGER AUTO_INCREMENT,
+  login varchar(20),
+  password varchar(30),
+  first_name varchar(50),
+  last_name varchar(50),
+  prom INTEGER,
+  PRIMARY KEY (ID_student)
 );
 
-CREATE TABLE `Question` (
-	`ID_Question` INT NOT NULL,
-	`Label` varchar(100) NOT NULL,
-	`Group` INT NOT NULL,
-	PRIMARY KEY (`ID_Question`)
+CREATE TABLE profile (
+  ID_profile INTEGER AUTO_INCREMENT,
+  type ENUM('R','I','A','S','E','C'),
+  url_description varchar(20),
+  PRIMARY KEY (ID_profile)
 );
 
-CREATE TABLE `Student` (
-	`ID_Student` INT NOT NULL,
-	`first_name` varchar(30) NOT NULL,
-	`last_name` varchar(30) NOT NULL,
-	`login` varchar(30) NOT NULL,
-	`password` varchar(50) NOT NULL,
-	`ID_Prom` INT NOT NULL,
-	`ID_Profile` INT NOT NULL,
-	PRIMARY KEY (`ID_Student`)
+CREATE TABLE result (
+  student INTEGER,
+  profile INTEGER,
+  percentage INTEGER,
+  PRIMARY KEY (student, profile)
 );
 
-CREATE TABLE `Prom` (
-	`ID_Prom` INT NOT NULL,
-	`label` INT NOT NULL,
-	PRIMARY KEY (`ID_Prom`)
+CREATE TABLE department (
+  ID_department INTEGER AUTO_INCREMENT,
+  label_department char(3),
+  PRIMARY KEY (ID_department)
 );
 
-CREATE TABLE `Session` (
-	`ID_Session` INT NOT NULL,
-	`code` varchar(50) NOT NULL,
-	`year` char(4) NOT NULL,
-	`ID_Prom` INT NOT NULL,
-	PRIMARY KEY (`ID_Session`)
+CREATE TABLE prom (
+  ID_prom INTEGER AUTO_INCREMENT,
+  department INTEGER,
+  year_prom ENUM('3','4','5'),
+  graduation_year char(4),
+  PRIMARY KEY ID_prom
 );
 
-CREATE TABLE `Admin` (
-	`ID_Admin` INT NOT NULL,
-	`login` varchar(30) NOT NULL,
-	`password` varchar(50) NOT NULL,
-	PRIMARY KEY (`ID_Admin`)
+CREATE TABLE proposition (
+  group INTEGER,
+  ID_proposition ENUM ('A','B','C','D','E','F'),
+  label_proposition varchar(200),
+  profile INTEGER,
+  PRIMARY KEY (group, ID_proposition)
 );
 
-CREATE TABLE `Profile` (
-	`ID_Profile` INT NOT NULL,
-	`type` char(1) NOT NULL,
-	`url_description` varchar(50) NOT NULL,
-	PRIMARY KEY (`ID_Profile`)
+CREATE TABLE session (
+  ID_session INTEGER AUTO_INCREMENT,
+  code char(6),
+  date_session date,
+  PRIMARY KEY (ID_session)
 );
 
-ALTER TABLE `Answer` ADD CONSTRAINT `Answer_fk0` FOREIGN KEY (`ID_Question`) REFERENCES `Question`(`ID_Question`);
+CREATE TABLE admin (
+  ID_admin INTEGER AUTO_INCREMENT,
+  login varchar(20),
+  password varchar(30),
+  PRIMARY KEY (ID_admin)
+);
 
-ALTER TABLE `Answer` ADD CONSTRAINT `Answer_fk1` FOREIGN KEY (`ID_Student`) REFERENCES `Student`(`ID_Student`);
-
-ALTER TABLE `Student` ADD CONSTRAINT `Student_fk0` FOREIGN KEY (`ID_Prom`) REFERENCES `Prom`(`ID_Prom`);
-
-ALTER TABLE `Student` ADD CONSTRAINT `Student_fk1` FOREIGN KEY (`ID_Profile`) REFERENCES `Profile`(`ID_Profile`);
-
-ALTER TABLE `Session` ADD CONSTRAINT `Session_fk0` FOREIGN KEY (`ID_Prom`) REFERENCES `Prom`(`ID_Prom`);
-
+ALTER TABLE result ADD FOREIGN KEY (student) REFERENCES student(ID_student);
+ALTER TABLE result ADD FOREIGN KEY (profile) REFERENCES profile(ID_profile);
+ALTER TABLE student ADD FOREIGN KEY (prom) REFERENCES prom(ID_prom);
+ALTER TABLE prom ADD FOREIGN KEY (department) REFERENCES department(ID_department);
+ALTER TABLE proposition ADD FOREIGN KEY (profile) REFERENCES profile(ID_profile);
