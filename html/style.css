@@ -20,7 +20,44 @@ body{
 	font-size: 50%;
 	color:#ecf0f1;
 }
-
+.titreProfil{
+	display: block;
+	width: 100%;
+	height: 15%;
+	text-align: left;
+	margin: auto;
+	background-color: #2c3e50; 
+	color: #ecf0f1;
+	font-size: 4em;
+	padding-left: 0.5em;
+}
+.buttonHandlerProfil{
+	display: inline-block;
+	width:25%;
+	height: 100%;
+	background-color: #2980b9;
+	text-align: center;
+}
+.histoHandlerProfil{
+	display: inline-block;
+	width:45%;
+	height: 50%;
+	background-color: #95a5a6;
+	text-align: center;
+	margin-left: 15%;
+}
+.bouttonProfil{
+	background-color: #27ae60;
+	padding: 0.7em 0.7em 0.7em 0.7em;
+	font-size: 1em;
+	color:#ecf0f1;
+	display: block;
+	width:80%;
+	border-radius: 8px;
+	text-align: center;
+	margin: 2em auto auto auto;
+	cursor: pointer;
+}
 .buttonHandler{
 	display: block;
 	size:100%;
