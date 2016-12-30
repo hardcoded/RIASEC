@@ -4,6 +4,9 @@
 	if(!isset($_GET['section']) || $_GET['section']=='index'){
 		include_once('controleur/c_index.php');
 	}
-	if($_GET['section']=='qcm'){
+	else if($_GET['section']=='qcm'){
 		include_once('controleur/c_qcm.php');
+	}
+	else if($_GET['section']=='compte'){
+		include_once('controleur/c_compte.php');
 	}
