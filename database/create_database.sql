@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS student (
 CREATE TABLE IF NOT EXISTS profile (
   ID_profile INTEGER AUTO_INCREMENT,
   type ENUM('R','I','A','S','E','C'),
-  url_description varchar(20),
+  url_description varchar(50),
   PRIMARY KEY (ID_profile)
 );
 
