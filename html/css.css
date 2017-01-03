@@ -5,16 +5,16 @@ table
 }
 td, th /* Mettre une bordure sur les td ET les th */
 {
-    border: 1px solid black;
+    border: 1px solid #34495e;
     padding: 5px;
     text-align: left;
 }
 tr:hover {
-    background-color: #4CAF50
+    background-color: #d35400
 }
 
 .green{
-  background-color: #4CAF50;
+  background-color: #d35400;
   color: white;
 }
 
@@ -34,11 +34,12 @@ tr:hover {
 
 html {
 	height: 100%;
+	color: white;
 	/*Image only BG fallback*/
 
 	/*background = gradient + image pattern combo*/
 	background:
-		linear-gradient(rgba(0, 255, 0, 0.3), rgba(155, 89, 182, 0.6));
+		linear-gradient(rgba(44, 62, 80,1.0), rgba(52, 73, 94,1.0));
 }
 
 body {
@@ -54,7 +55,7 @@ body {
 /*buttons*/
 #msform .action-button {
 	width: 100px;
-	background: #4CAF50;
+	background: #d35400;
 	font-weight: bold;
 	color: white;
 	border: 0 none;
@@ -126,7 +127,7 @@ body {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #27AE60;
+	background: #d35400;
 	color: white;
 }
 ul{
