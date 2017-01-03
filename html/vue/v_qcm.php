@@ -116,8 +116,8 @@
 
     </div>
 
-    <script src='swipe.js'></script>
-    <script src='drawStat.js'></script>
+    <script src='includes/swipe.js'></script>
+    <script src='includes/drawStat.js'></script>
 
     <div style='text-align:center;padding-top:20px;'>
 
@@ -128,5 +128,6 @@
   <script src="includes/table.js"></script>
   <script src="includes/bar.js"></script>
   <script src="includes/hexagone.js"></script>
+  <script src="includes/qcm.js"></script>
 	</body>
 </html>

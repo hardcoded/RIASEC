@@ -23,7 +23,7 @@
 		<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Rejoindre un test</span>
 	</div>
 	<div class="histoHandlerProfil ">
-		<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Je sui un historique !</span>
+		Hitsoiri zsujrh skdj  sdfjhoei oe fihzehfiuh
 	</div>
 
 <!-- Modal Join -->
@@ -35,9 +35,11 @@
         <h4 class="modal-title">Rejoindre une session</h4>
       </div>
       <div class="modal-body">
-	   		<input type="text" class="form-control" placeholder="ID Session" id="id_session" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
-	   		<input type="password" class="form-control" placeholder="Mot de passe" id="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
-	   		<span type="button" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;">Rejoindre</span>
+      	<form action="index.php" method="post" >
+	   		<input type="text" class="form-control" placeholder="ID Session" name="id_session" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
+	   		<input type="password" class="form-control" placeholder="Mot de passe" name="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
+	   		<input type="button" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;" Value="Rejoindre">
+      	</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
