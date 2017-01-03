@@ -1,5 +1,5 @@
 <?php
-	
+
 	include_once('modele/m_qcm.php');
 
 

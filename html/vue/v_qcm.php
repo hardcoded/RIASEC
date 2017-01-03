@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<title>Riasec</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="includes/jquery-3.1.1.min.js"></script>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
-	</head>
-	<body>
-	
-	  <!-- multistep form -->
+
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Riasec</title>
+
+  <link rel="stylesheet" href="css.css">
+
+  <script src="includes/question.js"></script>
+  <script src="includes/table.js"></script>
+  <script src="includes/bar.js"></script>
+  <script src="includes/hexagone.js"></script>
+
+</head>
+
+<body>
+  <!-- multistep form -->
 <form id="msform" align="center" >
   <!-- progressbar -->
   <ul id="progressbar" style="display:inline-table;" >
@@ -47,44 +46,44 @@
        <tr>
          <td><label>A</label></td>
          <td><label name = "label" ></label></td>
-         <td><input type="checkbox" class="checkbox1" name="checkbox" id="a"/></td>
-         <td><input type="checkbox" class="checkbox2" name="checkbox" id="a"/></td>
-         <td><input type="checkbox" class="checkbox3" name="checkbox" id="a"/></td>
+         <td name="case"><input type="checkbox" class="checkbox1" name="checkbox" id="a"/></td>
+         <td name="case"><input type="checkbox" class="checkbox2" name="checkbox" id="a"/></td>
+         <td name="case"><input type="checkbox" class="checkbox3" name="checkbox" id="a"/></td>
        </tr>
        <tr>
          <td><label>B</label></td>
          <td><label name = "label" ></label></td>
-         <td><input type="checkbox" class="checkbox1" name="checkbox" id="b"/></td>
-         <td><input type="checkbox" class="checkbox2" name="checkbox" id="b"/></td>
-         <td><input type="checkbox" class="checkbox3" name="checkbox" id="b"/></td>
+         <td name="case"><input type="checkbox" class="checkbox1" name="checkbox" id="b"/></td>
+         <td name="case"><input type="checkbox" class="checkbox2" name="checkbox" id="b"/></td>
+         <td name="case"><input type="checkbox" class="checkbox3" name="checkbox" id="b"/></td>
        </tr>
        <tr>
          <td><label>C</label></td>
          <td><label name = "label" ></label></td>
-         <td><input type="checkbox" class="checkbox1" name="checkbox" id="c"/></td>
-         <td><input type="checkbox" class="checkbox2" name="checkbox" id="c"/></td>
-         <td><input type="checkbox" class="checkbox3" name="checkbox" id="c"/></td>
+         <td name="case"><input type="checkbox" class="checkbox1" name="checkbox" id="c"/></td>
+         <td name="case"><input type="checkbox" class="checkbox2" name="checkbox" id="c"/></td>
+         <td name="case"><input type="checkbox" class="checkbox3" name="checkbox" id="c"/></td>
        </tr>
        <tr>
          <td><label>D</label></td>
          <td><label name = "label" ></label></td>
-         <td><input type="checkbox" class="checkbox1" name="checkbox" id="d"/></td>
-         <td><input type="checkbox" class="checkbox2" name="checkbox" id="d"/></td>
-         <td><input type="checkbox" class="checkbox3" name="checkbox" id="d"/></td>
+         <td name="case"><input type="checkbox" class="checkbox1" name="checkbox" id="d"/></td>
+         <td name="case"><input type="checkbox" class="checkbox2" name="checkbox" id="d"/></td>
+         <td name="case"><input type="checkbox" class="checkbox3" name="checkbox" id="d"/></td>
        </tr>
        <tr>
          <td><label>E</label></td>
          <td><label name = "label" ></label></td>
-         <td><input type="checkbox" class="checkbox1" name="checkbox" id="e"/></td>
-         <td><input type="checkbox" class="checkbox2" name="checkbox" id="e"/></td>
-         <td><input type="checkbox" class="checkbox3" name="checkbox" id="e"/></td>
+         <td name="case"><input type="checkbox" class="checkbox1" name="checkbox" id="e"/></td>
+         <td name="case"><input type="checkbox" class="checkbox2" name="checkbox" id="e"/></td>
+         <td name="case"><input type="checkbox" class="checkbox3" name="checkbox" id="e"/></td>
        </tr>
        <tr>
          <td><label>F</label></td>
          <td><label name = "label" ></label></td>
-         <td><input type="checkbox" class="checkbox1" name="checkbox" id="f"/></td>
-         <td><input type="checkbox" class="checkbox2" name="checkbox" id="f"/></td>
-         <td><input type="checkbox" class="checkbox3" name="checkbox" id="f"/></td>
+         <td name="case"><input type="checkbox" class="checkbox1" name="checkbox" id="f"/></td>
+         <td name="case"><input type="checkbox" class="checkbox2" name="checkbox" id="f"/></td>
+         <td name="case"><input type="checkbox" class="checkbox3" name="checkbox" id="f"/></td>
        </tr>
     </table>
 
@@ -124,10 +123,7 @@
     <button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
   </div>
 
-  <script src="includes/question.js"></script>
-  <script src="includes/table.js"></script>
-  <script src="includes/bar.js"></script>
-  <script src="includes/hexagone.js"></script>
-  <script src="includes/qcm.js"></script>
-	</body>
+
+
+</body>
 </html>
