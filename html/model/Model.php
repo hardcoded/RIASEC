@@ -9,7 +9,7 @@ abstract class Model {
     protected $table;
 
     protected function query($sql, $params = null) {
-      $database = DatabaseConnection::getInstance();
+      $this->database = DatabaseConnection::getInstance();
       if ($params == null) {
         $resultat = $this->database->query($sql);    // exécution directe
       }
@@ -29,8 +29,8 @@ abstract class Model {
       }
       catch (PDOException $e)
       {
-        echo($e->getMessage());
-        die("<br> Erreur lors de la recherche de tous les objets de la table" . $this->table);
+        exit('<p>Erreur lors de la sélection sur la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
       }
     }
 
@@ -42,8 +42,8 @@ abstract class Model {
         return $res;
       }
       catch(PDOException $e){
-        echo($e->getMessage());
-        die("<br> Erreur lors de la selection de l'objet dans la table " . $this->table);
+        exit('<p>Erreur lors de la selection de l\'objet dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
       }
     }
 }
