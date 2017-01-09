@@ -1,7 +1,7 @@
 <?php
   require_once "../model/PropositionModel.php";
 
-  $pm = new PropositionModel;
+  $pm = new PropositionModel();
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,9 @@
     <?php
       for ($i = 1; $i <= 12; $i++) {
         $propositions = $pm->getByGroup($i);
-        var_dump($propositions);
+        // echo 'TPM : ';
+        // var_dump($propositions);
+        // echo '<br /><br />';
       }
     ?>
   </body>
