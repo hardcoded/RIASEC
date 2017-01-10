@@ -35,10 +35,10 @@
         <h4 class="modal-title">Connection</h4>
       </div>
       <div class="modal-body">
-     	 <form action="index.php" method="post" >
+     	 <form action="index.php?section=index&type=login" method="post" >
 	   		<input type="text" class="form-control" placeholder="Identifiant" name="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 	   		<input type="password" class="form-control" placeholder="Mot de passe" name="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
-	   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;" Value="Se connecter">
+	   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" Value="Se connecter">
 	   	 </form>
       </div>
       <div class="modal-footer">
@@ -59,10 +59,10 @@
         <h4 class="modal-title" style="color:#ecf0f1;">Connection Admin</h4>
       </div>
       <div class="modal-body" style="background-color: #2c3e50;">
-      	<form action="index.php" method="post" >
+      	<form action="index.php?section=index&type=loginadmin" method="post" >
 	   		<input type="text" class="form-control" placeholder="Identifiant" name="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 	   		<input type="password" class="form-control" placeholder="Mot de passe" name="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
-	   		<input type="button" class="boutton" style="background-color: #27ae60 ; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;" Value="Se connecter">
+	   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" Value="Se connecter">
 	   	</form>
       </div>
       <div class="modal-footer" style="background-color: #2c3e50;">
@@ -83,7 +83,7 @@
         <h4 class="modal-title">Inscription</h4>
       </div>
       <div class="modal-body">
-      	<form action="index.php" method="post" >
+      	<form action="index.php?section=index&type=register" method="post" >
 	   		<input type="text" class="form-control" placeholder="Identifiant" name="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 	   		<input type="password" class="form-control" placeholder="Mot de passe" name="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
 	   		<input type="text" class="form-control" placeholder="Nom" name="first_name" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
@@ -122,7 +122,7 @@
 		        <option>2030-2031</option>
 		     </select>
 		     </div>
-	   		<input type="button" class="boutton" style="background-color: #2980b9; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;" Value="S'inscrire">
+	   		<input type="submit" class="boutton" style="background-color: #2980b9; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" Value="S'inscrire">
       	</form>
       </div>
       <div class="modal-footer">
