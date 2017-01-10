@@ -1,7 +1,7 @@
 var ctx = document.getElementById("bar");
 
 	var data = {
-	        labels: ["Réaliste", "Investigatif", "Artistique", "Social", "Entrepreneur", "Conventionnel"],
+	        labels: ["Puriste", "Investigatif", "Artistique", "Social", "Entrepreneur", "Conventionnel"],
 	        datasets: [
         {
             //label: "Mes Résultats",
