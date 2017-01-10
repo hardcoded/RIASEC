@@ -7,6 +7,14 @@ body{
 	font-family: montserrat, arial, verdana;
 	background-color: #34495e; 
 }
+.error{
+	color:white;
+	width: 100%;
+	display: block;
+	text-align: center;
+	background-color: red;
+	font-size: 1.2em;
+}
 .titre{
 	display: block;
 	width: 100%;
