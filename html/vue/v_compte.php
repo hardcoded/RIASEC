@@ -20,10 +20,22 @@
 	</div>
 
 	<div class="buttonHandlerProfil ">
-		<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Rejoindre un test</span>
+		<?php 
+		if(!$estAdmin){
+			echo'<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Rejoindre un test</span>';
+		}
+		else{
+			echo'<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Creer session</span>';
+		}
+		?>
 	</div>
 	<div class="histoHandlerProfil ">
-		Hitsoiri zsujrh skdj  sdfjhoei oe fihzehfiuh
+		<span class="histoTitre">
+		Vos résultats de tests
+		</span>
+		<span class="histoId" style="text-decoration: underline;">ID session</span><span class="histoLink" style="text-decoration: underline;">Lien Resultat</span>
+		<span class="histoId">128</span><a class="histoLink">Voir</a>
+		<span class="histoId">4080</span><a class="histoLink">Voir</a>
 	</div>
 
 <!-- Modal Join -->
