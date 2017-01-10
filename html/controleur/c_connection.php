@@ -19,6 +19,11 @@
 				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
 			}
 			else{
+				$login=htmlspecialchars($_POST['username']);
+				$password=htmlspecialchars($_POST['password']);
+				$studdent=array();
+				$studdent['login']= $login;
+				$studdent['password']=$password;
 				echo '<div class="formInfo">Vous êtes désormais connecté avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>';
 			}
 		}
