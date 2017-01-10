@@ -113,7 +113,7 @@
 				$studdent=array();
 				$studdent['login']= $login;
 				$studdent['password']=$password;
-				echo '<div class="formInfo">Vous êtes désormais connecté avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
+				echo '<div class="formInfo">Vous êtes désormais inscrit avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
 				echo'
 				<script type="text/javascript">
 				
@@ -122,7 +122,7 @@
 					    window.setTimeout(function(){
 
 					        // Move to a new location or you can do something else
-					        window.location.href = "index.php?section=compte";
+					        window.location.href = "index.php";
 
 					    }, 4000);
 
