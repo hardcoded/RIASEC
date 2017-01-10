@@ -44,17 +44,40 @@ body{
 .buttonHandlerProfil{
 	display: inline-block;
 	width:25%;
-	height: 2000px;
+	height: 1000px;
 	background-color: #2980b9;
 	text-align: center;
 }
 .histoHandlerProfil{
 	display: inline-block;
-	width:45%;
-	height: 50%;
-	background-color: #95a5a6;
+	position: absolute;
+	width:65%;
+	height: 100%;
+	
 	text-align: center;
-	margin-left: 15%;
+	font-size: 1.3em;
+	margin-left: 5%;
+	padding: 1em 5em 1em 5em;
+}
+.histoLink{
+	display: inline-block;
+	width: 30%;
+	text-align: right;
+	color: white;
+}
+.histoId{
+	display: inline-block;
+	width: 70%;
+	text-align: left;
+	color: white;
+}
+.histoTitre{
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-size: 1.6em;
+	font-style: bold;
+	text-decoration: underline;
 }
 .bouttonProfil{
 	background-color: #27ae60;
