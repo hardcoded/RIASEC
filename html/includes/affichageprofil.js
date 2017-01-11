@@ -13,5 +13,5 @@ function Profil(score){
 		} 
 	}
 	alert("D'après vos réponses au questionnaire RIASEC, Vous avez un profil de type"+profils[j]);
-	return 0;
+	return profils[j];
 	};
