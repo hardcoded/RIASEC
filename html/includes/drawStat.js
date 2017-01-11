@@ -39,14 +39,14 @@ cPerc = Math.random();
 
 
 function change(){
-  if(!drawnedHexagone && currentSlide == 0){
+  /*if(!drawnedHexagone && currentSlide == 0){
     animateHexagone(25,25, 450,450,rPerc,iPerc,aPerc,sPerc,ePerc,cPerc,2000);
     drawnedHexagone = true;
   }
   if(!drawnedBar && currentSlide == 1){
     drawBarStat(50,50, 400,400,rPerc,iPerc,aPerc,sPerc,ePerc,cPerc,2000);
     drawnedBar = true;
-  }
+  }*/
   if(currentSlide == 1){
     mySwipe.prev()
     currentSlide--
