@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
@@ -8,12 +8,25 @@
 
   <script src="includes/question.js"></script>
   <script src="includes/table.js"></script>
-  <script src="includes/bar.js"></script>
-  <script src="includes/hexagone.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
 
 </head>
 
 <body>
+<!--barre de navigation sur la gauche -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TEST RIASEC</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="http://www.google.fr">Accueil</a></li>
+      <li><a href="http://www.facebook.com">Mon Profil</a></li>
+      <li><a href="http://www.youtube.com">Mes résultats</a></li>
+    </ul>
+  </div>
+</nav>
   <!-- multistep form -->
 <form id="msform" align="center" >
   <!-- progressbar -->
@@ -102,26 +115,41 @@
               <canvas id="bar" width="500" height="500">
                   Message pour les navigateurs ne supportant pas encore canvas.
               </canvas>
+
       </div>
 
 
 
       <div>
               <canvas id="hexagone" width="500" height="500">
-                  Message pour les navigateurs ne supportant pas encore canvas.
+                  Message pour les navigateurs ne supportant pas encore canvas
               </canvas>
       </div>
+      <div>
+              <canvas id="affichageprofil" width="500" height="500">
+                  Message pour les navigateurs ne supportant pas encore canvas.
+              </canvas>
+
+      </div>
+
+
 
 
     </div>
 
     <script src='includes/swipe.js'></script>
     <script src='includes/drawStat.js'></script>
+    <script src='includes/affichageprofil.js'></script>
+    <script src='includes/hexagone.js'></script>
+    <script src='includes/bar.js'></script>
+    
 
     <div style='text-align:center;padding-top:20px;'>
 
     <button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
   </div>
+   
+
 
 
 
