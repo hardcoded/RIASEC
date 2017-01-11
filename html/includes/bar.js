@@ -44,5 +44,5 @@ function drawBar(){
     	    }
     });
 var profils=["réaliste","investigatif","artistique","social","entrepreneur","conventionnel"];
-Profil(score);
+//Profil(score);
 }
