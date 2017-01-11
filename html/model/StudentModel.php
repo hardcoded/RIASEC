@@ -22,16 +22,28 @@
       }
     }
 
-    public function updateStudentPassword($studentID, $newPAssword) {
+    public function updateStudentPassword($studentID, $newPassword) {
       try {
         $sql = 'UPDATE '.$this->table.' SET password = :password WHERE '.$this->pk_key.' = :studentID';
-        $req = $this->query($sql, array(':password' => $newPAssword,
+        $req = $this->query($sql, array(':password' => $newPassword,
                                         ':studentID' => $studentID));
-      } catch (PDOException $e) {
+      }
+      catch (PDOException $e) {
         exit('<p>Erreur lors de la mise à jour dans la table : '.$this->table
              .'<br/>'.$e->getMessage().'</p>');
       }
+    }
 
+    public function updateStudentProm($studentID, $newProm) {
+      try {
+        $sql = 'UPDATE '.$this->table.' SET prom = :prom WHERE '.$this->pk_key.' = :studentID';
+        $req = $this->query($sql, array(':prom' => $newProm,
+                                        ':studentID' => $studentID));
+      }
+      catch (PDOException $e) {
+        exit('<p>Erreur lors de la mise à jour dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
     }
   }
 ?>
