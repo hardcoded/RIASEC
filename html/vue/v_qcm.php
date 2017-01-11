@@ -13,20 +13,7 @@
 </head>
 
 <body>
-<!--barre de navigation sur la gauche -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">TEST RIASEC</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="http://www.google.fr">Accueil</a></li>
-      <li><a href="http://www.facebook.com">Mon Profil</a></li>
-      <li><a href="http://www.youtube.com">Mes résultats</a></li>
-    </ul>
-  </div>
-</nav>
+
   <!-- multistep form -->
 <form id="msform" align="center" >
   <!-- progressbar -->
