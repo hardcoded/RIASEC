@@ -2,8 +2,8 @@
 
 CREATE TABLE IF NOT EXISTS student (
   ID_student INTEGER AUTO_INCREMENT,
-  login varchar(20),
-  password varchar(30),
+  login varchar(50),
+  password varchar(100),
   first_name varchar(50),
   last_name varchar(50),
   prom INTEGER,
