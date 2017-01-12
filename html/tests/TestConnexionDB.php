@@ -6,6 +6,8 @@
   $i = 3;
   $stmt->execute(array(':group' => $i));
   $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>

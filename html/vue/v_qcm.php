@@ -124,18 +124,19 @@
 
     </div>
 
+    <script> var ar = <?php echo json_encode($array) ?></script>
     <script src='includes/swipe.js'></script>
     <script src='includes/drawStat.js'></script>
     <script src='includes/affichageprofil.js'></script>
     <script src='includes/hexagone.js'></script>
     <script src='includes/bar.js'></script>
-    
+
 
     <div style='text-align:center;padding-top:20px;'>
 
     <button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
   </div>
-   
+
 
 
 

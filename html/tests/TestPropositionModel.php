@@ -12,13 +12,17 @@
   </head>
   <body>
     <?php
+      $array = array();
       for ($i = 1; $i <= 12; $i++) {
         $propositions = $pm->getByGroup($i);
          echo "<h2>Groupe n° $i</h2>";
+        $p = array();
         foreach ($propositions as $prop) {
-          echo $prop['ID_proposition'].' : '.$prop['label_proposition'];
-          echo '<br />';
+          // echo $prop['ID_proposition'].' : '.$prop['label_proposition'];
+          // echo '<br />';
+          $p[] = $prop['label_proposition'];
         }
+        $array[$i] = $p;
       }
     ?>
   </body>

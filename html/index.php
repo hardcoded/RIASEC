@@ -1,6 +1,6 @@
-<?php 
-	include_once('connexion_sql.php');
-	
+<?php
+	require_once("model/DatabaseConnection.php");
+
 	if(!isset($_GET['section']) || $_GET['section']=='index'){
 		include_once('controleur/c_connection.php');
 	}
@@ -9,10 +9,4 @@
 	}
 	else if($_GET['section']=='compte'){
 		include_once('controleur/c_compte.php');
-	}
-	else if($_GET['section']=='résultats'){
-		include_once('controleur/c_résultats.php');
-	}
-	else if($_GET['section']=='profils'){
-		include_once('controleur/c_profils.php');
 	}
