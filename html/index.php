@@ -10,3 +10,9 @@
 	else if($_GET['section']=='compte'){
 		include_once('controleur/c_compte.php');
 	}
+	else if($_GET['section']=='résultats'){
+		include_once('controleur/c_résultats.php');
+	}
+	else if($_GET['section']=='profils'){
+		include_once('controleur/c_profils.php');
+	}
