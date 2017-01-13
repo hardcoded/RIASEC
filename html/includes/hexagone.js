@@ -1,4 +1,4 @@
-function drawHexagone(){
+function drawHexagone(score){
 	var ctx = document.getElementById("hexagone");
 
 		
@@ -12,7 +12,7 @@ function drawHexagone(){
 		            pointBorderColor: "#fff",
 		            pointHoverBackgroundColor: "#fff",
 		            pointHoverBorderColor: "rgba(179,181,198,1)",
-		            data: Algorithme(),
+		            data: score,//Algorithme(),
 		        }/*,
 		        	{
 		            label: "Résultats Promo",

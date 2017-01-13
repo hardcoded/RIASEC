@@ -1,6 +1,6 @@
-function drawBar(){
+function drawBar(score){
     var ctx = document.getElementById("bar");
-        var score = Algorithme();
+        //var score = Algorithme();
 
     	var data = {
     	        labels: ["Réaliste", "Investigatif", "Artistique", "Social", "Entrepreneur", "Conventionnel"],
