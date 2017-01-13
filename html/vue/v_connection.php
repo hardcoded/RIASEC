@@ -38,7 +38,7 @@
      	 <form action="index.php?section=index&type=login" method="post" >
 	   		<input type="text" class="form-control" placeholder="Identifiant" name="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 	   		<input type="password" class="form-control" placeholder="Mot de passe" name="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
-	   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" Value="Se connecter">
+	   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Se connecter">
 	   	 </form>
       </div>
       <div class="modal-footer">

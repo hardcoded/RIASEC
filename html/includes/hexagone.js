@@ -1,7 +1,7 @@
 function drawHexagone(score){
 	var ctx = document.getElementById("hexagone");
 
-		
+
 		var data = {
 		        labels: ["Réaliste", "Investigatif", "Artistique", "Social", "Entrepreneur", "Conventionnel"],
 		        datasets: [{
@@ -12,7 +12,7 @@ function drawHexagone(score){
 		            pointBorderColor: "#fff",
 		            pointHoverBackgroundColor: "#fff",
 		            pointHoverBorderColor: "rgba(179,181,198,1)",
-		            data: score,//Algorithme(),
+		            data: score,
 		        }/*,
 		        	{
 		            label: "Résultats Promo",
@@ -25,7 +25,7 @@ function drawHexagone(score){
 		            data: [28, 48, 40, 19, 96, 27],// à récupérer dans base de donnée
 		        }*/]
 		};
-		
+
 
 		var myRadarChart = new Chart(ctx, {
 		    type: 'radar',

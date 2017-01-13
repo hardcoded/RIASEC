@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html >
 <head>
   <meta charset="UTF-8">
@@ -8,12 +8,12 @@
 
   <script src="includes/question.js"></script>
   <script src="includes/table.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
+  <script src="includes/bar.js"></script>
+  <script src="includes/hexagone.js"></script>
 
 </head>
 
 <body>
-
   <!-- multistep form -->
 <form id="msform" align="center" >
   <!-- progressbar -->
@@ -102,42 +102,26 @@
               <canvas id="bar" width="500" height="500">
                   Message pour les navigateurs ne supportant pas encore canvas.
               </canvas>
-
       </div>
 
 
 
       <div>
               <canvas id="hexagone" width="500" height="500">
-                  Message pour les navigateurs ne supportant pas encore canvas
-              </canvas>
-      </div>
-      <div>
-              <canvas id="affichageprofil" width="500" height="500">
                   Message pour les navigateurs ne supportant pas encore canvas.
               </canvas>
-
       </div>
-
-
 
 
     </div>
 
-    <script> var ar = <?php echo json_encode($array) ?></script>
     <script src='includes/swipe.js'></script>
     <script src='includes/drawStat.js'></script>
-    <script src='includes/affichageprofil.js'></script>
-    <script src='includes/hexagone.js'></script>
-    <script src='includes/bar.js'></script>
-
 
     <div style='text-align:center;padding-top:20px;'>
 
     <button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
   </div>
-
-
 
 
 
