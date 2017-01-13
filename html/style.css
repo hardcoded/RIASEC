@@ -25,10 +25,26 @@ body{
 	color: #ecf0f1;
 	font-size: 8em;
 }
+.titre2{
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	color: #FFFFFF;
+	font-size: 2em;
+}
 .sousTitre{
 	text-align: center;
 	font-size: 50%;
+	color:#FFFFFF;
+}
+.sousTitre2{
+	display: block;
+	width: 30%;
+	text-align : left;
 	color:#ecf0f1;
+	font-size: 1.5em;
+
 }
 .titreProfil{
 	display: block;
