@@ -1,5 +1,14 @@
 -- Remplissage de la base de données
 
+-- Table 'profile'
+INSERT INTO profile (type, url_description)
+VALUES ('R', '/RIASEC/realiste.pdf'),
+       ('I', '/RIASEC/investigatif.pdf'),
+       ('A', '/RIASEC/artistique.pdf'),
+       ('S', '/RIASEC/social.pdf'),
+       ('E', '/RIASEC/entrepreneur.pdf'),
+       ('C', '/RIASEC/conventionnel.pdf');
+
 -- Table 'proposition'
 INSERT INTO proposition (ID_proposition, groupe, label_proposition, profile)
 VALUES ('A', 1, 'Vous aimez avoir des activités à l\'extérieur, travailler en plein air', 1),
@@ -74,15 +83,6 @@ VALUES ('A', 1, 'Vous aimez avoir des activités à l\'extérieur, travailler en
        ('D', 12, 'Vous aimez que ce que vous faites débouche sur des résultats concrets', 1),
        ('E', 12, 'Vous aimez ou aimeriez mettre au point et réaliser des expériences scientifiques', 2),
        ('F', 12, 'Vous aimez étudier ou inventer plusieurs solutions pour répondre à un problème', 3);
-
--- Table 'profile'
-INSERT INTO profile (type, url_description)
-VALUES ('R', '/RIASEC/realiste.pdf'),
-       ('I', '/RIASEC/investigatif.pdf'),
-       ('A', '/RIASEC/artistique.pdf'),
-       ('S', '/RIASEC/social.pdf'),
-       ('E', '/RIASEC/entrepreneur.pdf'),
-       ('C', '/RIASEC/conventionnel.pdf');
 
 INSERT INTO department (label_department)
 VALUES ('ENR'),
