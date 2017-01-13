@@ -132,9 +132,14 @@
 	}
   else if ($_GET['type'] == 'disconnect') {
     $authController->disconnect();
-    header('Location: ./');
+    header('Location: ./?section=index');
   }
 
-	include_once('vue/v_connection.php');
+	if (!isset($_COOKIE['token'])) {
+    include_once('vue/v_connection.php');
+  }
+  else {
+    require_once('controleur/c_compte.php');
+  }
 
 ?>
