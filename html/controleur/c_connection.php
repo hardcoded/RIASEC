@@ -1,6 +1,7 @@
 <?php
-	
-	include_once('modele/m_connection.php');
+
+	require_once('AuthController.php');
+	$authController = new AuthController();
 
 	//On regarde quel est le formulaire qui a été posté si il y en a eu un
 	if($_GET['type']=='login'){
@@ -19,32 +20,12 @@
 				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
 			}
 			else{
-				$login=htmlspecialchars($_POST['username']);
-				$password=sha1($_POST['password']);
-				$studdent=array();
-				$studdent['login']= $login;
-				$studdent['password']=$password;
-				echo '<div class="formInfo">Vous êtes désormais connecté avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
-				echo'
-				<script type="text/javascript">
-				
-
-					    
-					    window.setTimeout(function(){
-
-					        // Move to a new location or you can do something else
-					        window.location.href = "index.php?section=compte";
-
-					    }, 4000);
-
-								
-				</script>
-				';
-
+				$login = htmlspecialchars($_POST['username']);
+				$password = hash("sha256", $_POST['password']);
+        $authController->studentConnexion($login,$password);
+				echo "<script type='text/javascript'>document.location.replace('vue/v_compte.php');</script>";
 			}
 		}
-
-		
 	}
 	else if($_GET['type']=='loginadmin'){
 	//On vérifie les champs
@@ -62,32 +43,14 @@
 				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
 			}
 			else{
-				$login=htmlspecialchars($_POST['username']);
-				$password=sha1($_POST['password']);
-				$studdent=array();
-				$studdent['login']= $login;
-				$studdent['password']=$password;
-				echo '<div class="formInfo">Vous êtes désormais connecté avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
-				echo'
-				<script type="text/javascript">
-				
-
-					    
-					    window.setTimeout(function(){
-
-					        // Move to a new location or you can do something else
-					        window.location.href = "index.php?section=compte";
-
-					    }, 4000);
-
-								
-				</script>
-				';
-
+				$login = htmlspecialchars($_POST['username']);
+				$password = hash("sha256", $_POST['password']);
+				$authController->adminConnexion($login,$pasword);
+				echo 'Successfuly logged';
 			}
 		}
 
-		
+
 	}
 	else if($_GET['type']=='register'){
 	//On vérifie les champs
@@ -105,34 +68,20 @@
 				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
 			}
 			else{
-				$login=htmlspecialchars($_POST['username']);
-				$password=sha1($_POST['password']);
-				$first_name=htmlspecialchars($_POST['first_name']);
-				$last_name=htmlspecialchars($_POST['last_name']);
+				$login = htmlspecialchars($_POST['username']);
+				$password = sha1($_POST['password']);
+				$first_name = htmlspecialchars($_POST['first_name']);
+				$last_name = htmlspecialchars($_POST['last_name']);
 
-				$studdent=array();
-				$studdent['login']= $login;
-				$studdent['password']=$password;
-				echo '<div class="formInfo">Vous êtes désormais inscrit avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
-				echo'
-				<script type="text/javascript">
-				
-
-					    
-					    window.setTimeout(function(){
-
-					        // Move to a new location or you can do something else
-					        window.location.href = "index.php";
-
-					    }, 4000);
-
-								
-				</script>
-				';
-
+				$student = array();
+				$student['login'] = $login;
+				$student['password'] = $password;
+				$student['first-name']= $first_name;
+				$student['last-name'] = $last_name;
 			}
 		}
-
 	}
 
 	include_once('vue/v_connection.php');
+
+?>
