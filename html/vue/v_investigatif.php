@@ -67,8 +67,8 @@ table, th, td {
 	</div>
 	<div>
 	<ul>
-	  <li><a class="active" href="?section=profils&profil=realiste">Réaliste</a></li>
-	  <li><a href="?section=profils&profil=investigatif" >Investigatif</a></li>
+	  <li><a href="?section=profils&profil=realiste">Réaliste</a></li>
+	  <li><a class="active" href="?section=profils&profil=investigatif" >Investigatif</a></li>
 	  <li><a href="?section=profils&profil=artistique">Artistique</a></li>
 	  <li><a href="?section=profils&profil=social">Social</a></li>
 	  <li><a href="?section=profils&profil=entrepreneur">Entrepreneur</a></li>
@@ -77,9 +77,9 @@ table, th, td {
 	</div>
 
 	<div class = "titre2">
-	TYPE « REALISTE »
+	TYPE « INVESTIGATIF »
 	</div>
-<img src="includes/realiste.png" style="margin-left:45%;width:10%;height:10%;">
+<img src="includes/investigatif.png" style="margin-left:45%;width:10%;height:10%;">
 
 	<div align="center" style="overflow-x:auto;">
 		 <table style="width:75%">
@@ -89,7 +89,7 @@ table, th, td {
 		  <tr>
 		    <td>
 		    <br/>
-		    Vos principales valeurs sont la tradition, le sens pratique, le bon sens, le goût du travail bien fait. Vous recherchez les résultats concrets.
+		    Vos principales valeurs sont l’indépendance, la curiosité d’esprit, le désir d’élaborer intellectuellement. Vous avez besoin d’apprendre et de comprendre.
 			</td>
 		  </tr>
 
@@ -106,22 +106,21 @@ table, th, td {
 		  <tr>
 		    <td>
 		    </br>
-		    		<li>Discipline, persévérance, efficacité, fiabilité, honnêteté, franchise, ambition, souci du travail bien fait, pragmatisme, sens pratique, sens du détail, sens des réalités, méticulosité, habileté manuelle, coordination physique, dextérité, patience, minutie, constance.</li>
-		    		<li>Vous êtes une personne réaliste, concrète, précise, sensée, naturelle, simple et fidèle en amitié.</li>
-		    		<li>Vous aimez les résultats tangibles et voir concrètement le résultat de vos actions.</li>
-		    		<li>Vous aimez le mouvement, l’action, les sensations fortes, agir sur les choses, voir et toucher et avoir une certaine liberté.</li>
-		    		<li>Vous êtes sensible aux récompenses.</li>
+		    		<li>Méthode, rigueur, curiosité, calme, indépendance, sens critique, esprit d’analyse, esprit logique, esprit scientifique, sens de l’observation, sens de l’anticipation, talent pour les maths et les sciences, ouverture d’esprit, créativité, persévérance, tolérance, objectivité, raisonnement, spécialisation.</li>
+		    		<li>Vous êtes une personne précise, prudente dans vos jugements et réfléchie, attirée par la théorie et par l’abstrait.</li>
+		    		<li>Vous aimez les défis compliqués faisant appel à la créativité et aux raisonnements.</li>
+		    		<li>Vous aimez les activités permettant d’étudier divers phénomènes physiques, culturels, sociaux ou biologiques.</li>
+		    		<li>Vous donnez une image de crédibilité et de compétence intellectuelle.</li>
 		    </td>
 		    <td>
 		    </br>		    		
-		    		<li>Intérêt pour les activités ancrées dans la réalité.</li>
-		    		<li>Intérêt pour la manipulation d’objets, d’outils ou de machines.</li>
-		    		<li>Vous savez gérer votre temps et travailler de façon autonome.</li>
-		    		<li>Vous savez partager vos expériences et vos connaissances avec les autres.</li>
-		    		<li>Vous préférez les solutions concrètes et pratiques aux stratégies faisant trop appel à l’imagination.</li>
-		    		<li>Vous aimez construire et réparer.</li>
-		    		<li>Vous aimez conduire des machines.</li>
-		    		<li>Vous possédez un savoir-faire mécanique.</li>
+		    		<li>Goût pour la recherche.</li>
+		    		<li>Vous tenez compte de tous les aspects d’une situation avant de l’aborder.</li>
+		    		<li>Vous savez partager les responsabilités, gérer les priorités et rédiger un projet de manière claire et précise.</li>
+		    		<li>Vous êtes capable de mettre en place un plan d’action.</li>
+		    		<li>Vous cherchez à étendre le champ de vos connaissances, compétences, expériences.</li>
+		    		<li>Vous aimez comprendre, apprendre et jongler avec les idées, les concepts et les symboles.</li>
+		    		<li>Vous aimez relever des défis intellectuels complexes, étudier et résoudre des problèmes abstraits.</li>
 		    </td>
 		  <tr>
 		    <td></br>ENVIRONNEMENTS CONSEILLES</td>
@@ -130,24 +129,18 @@ table, th, td {
 		  <tr>
 		    <td>
 		    </br>
-		    		<li>Ceux orientés vers la réalisation concrète.</li>
-		    		<li>Ceux qui permettent de travailler seul.</li>
-		    		<li>Ceux de taille restreinte et homogène.</li>
-		    		<li>Ceux assez centrés sur leurs activités.</li>
-		    		<li>Pas trop hiérarchisé et permettant un travail libre et autonome.</li>
-		    		<li>Ceux qui permettent une activité de plein air et qui nécessitent de l’endurance physique.</li>
-		    		<li>Le travail manuel, la maintenance, l’industrie..</li>
+		    		<li>Ceux qui encouragent la réflexion et l’observation.</li>
+		    		<li>Ceux qui favorisent la recherche de solutions originales et mettent les personnes en situation d’apprentissage permanent.</li>
+		    		<li>Domaine de la recherche, des sciences, des idées, des données mathématiques, de l’éducation et de l’écrit.</li>
 		    </td>
 		    <td>
 		    </br>		    		
-		    		<li>Vous n’êtes pas porté à aller vers les autres.</li>
-		    		<li>Faible intérêt pour la nouveauté.</li>
-		    		<li>Difficultés à se mettre en valeur.</li>
-		    		<li>Faible créativité.</li>
-		    		<li>Pas très à l’aise dans la réflexion et l’abstraction.</li>
-		    		<li>Vous parlez peu de vous même, êtes peu intuitif et peu perspicace.</li>
-		    		<li>Vous n’aimez pas les activités à caractère social, pédagogique et thérapeutique</li>
-
+		    		<li>Vous avez des difficultés à vendre vos idées, à prendre des décisions rapides, à prendre en compte les aspects pratiques d’un projet.</li>
+		    		<li>Vous n’aimez pas les contraintes de temps.</li>
+		    		<li>Vous avez peu confiance en vous.</li>
+		    		<li>Vous pouvez être dogmatique et renfermé.</li>
+		    		<li>Vous avez parfois du mal à faire la part des choses entre vie personnelle et vie professionnelle.</li>
+		    		<li>Vous êtes rétif aux aspects administratifs et hiérarchiques et aux activités routinières.</li>
 		    </td>
 		  </tr>
 		</table> 
