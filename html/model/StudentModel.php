@@ -15,6 +15,7 @@
                                         ':first_name' => $student['firstName'],
                                         ':last_name' => $student['lastName'],
                                         ':prom' => $student['promID']));
+        return $this->database->lastInsertId();
       }
       catch(PDOException $e){
         exit('<p>Erreur lors de l\'insertion des données dans la table : '.$this->table

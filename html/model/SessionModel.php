@@ -13,6 +13,7 @@
         $req = $this->query($sql, array(':code' => $session['code'],
                                         ':date' => $session['date'],
                                         ':prom' => $session['prom']));
+        return $this->database->lastInsertId();
       }
       catch(PDOException $e){
         exit('<p>Erreur lors de l\'insertion des données dans la table : '.$this->table

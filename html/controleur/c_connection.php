@@ -1,86 +1,139 @@
 <?php
 
 	require_once('AuthController.php');
+	require_once('model/PromModel.php');
+	require_once('model/DepartmentModel.php');
+	require_once('model/StudentModel.php');
 	$authController = new AuthController();
+	$promModel = new PromModel();
+	$depModel = new DepartmentModel();
+	$studentModel = new StudentModel();
+
+	$departments = $depModel->getAll();
 
 	//On regarde quel est le formulaire qui a été posté si il y en a eu un
 	if($_GET['type']=='login'){
 	//On vérifie les champs
-		error_reporting(E_ALL);
-
 		if(!empty($_POST)){
 				$retour=1;
+				$message = "";
 			foreach($_POST as $cle=>$val){
 				if(empty($val)){
-					echo '<span class="error">Le champ ',$cle,' est obligatoire.</span>';
-					$retour=0;
+					$message .= '<div class="alert alert-danger">
+    										Le champ <strong>'.$cle.'</strong> est obligatoire.
+  										</div>';
+					$retour=-1;
 				}
 			}
-			if($retour==0){
-				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
+			if($retour==-1){
+				echo $message;
 			}
 			else{
 				$login = htmlspecialchars($_POST['username']);
 				$password = hash("sha256", $_POST['password']);
         $authController->studentConnexion($login,$password);
-				echo "<script type='text/javascript'>document.location.replace('vue/v_compte.php');</script>";
+				$err = AuthController::$error;
+				if (empty($err)) {
+					header('Location: ./?section=compte');
+				}
+				else {
+					echo '<div class="alert alert-danger">'.$err.'</div>';
+				}
 			}
 		}
 	}
 	else if($_GET['type']=='loginadmin'){
 	//On vérifie les champs
-		error_reporting(E_ALL);
-
-		if(!empty($_POST)){
+    if(!empty($_POST)){
 				$retour=1;
+				$message = "";
 			foreach($_POST as $cle=>$val){
 				if(empty($val)){
-					echo '<span class="error">Le champ ',$cle,' est obligatoire.</span>';
-					$retour=0;
+					$message .= '<div class="alert alert-danger">
+    										Le champ <strong>'.$cle.'</strong> est obligatoire.
+  										</div>';
+					$retour=-1;
 				}
 			}
-			if($retour==0){
-				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
+			if($retour==-1){
+				echo $message;
 			}
 			else{
 				$login = htmlspecialchars($_POST['username']);
 				$password = hash("sha256", $_POST['password']);
-				$authController->adminConnexion($login,$pasword);
-				echo 'Successfuly logged';
+        $authController->adminConnexion($login,$password);
+				$err = AuthController::$error;
+				if (empty($err)) {
+					header('Location: ./?section=compte');
+				}
+				else {
+					echo '<div class="alert alert-danger">'.$err.'</div>';
+				}
 			}
-		}
-
-
-	}
+	  }
+  }
 	else if($_GET['type']=='register'){
 	//On vérifie les champs
 		error_reporting(E_ALL);
 
 		if(!empty($_POST)){
 				$retour=1;
+				$message = "";
 			foreach($_POST as $cle=>$val){
 				if(empty($val)){
-					echo '<span class="error">Le champ ',$cle,' est obligatoire.</span>';
-					$retour=0;
+					$message .= '<div class="alert alert-danger">
+    										Le champ <strong>'.$cle.'</strong> est obligatoire.
+  										</div>';
+					$retour=-1;
 				}
 			}
-			if($retour==0){
-				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
+			if($retour==-1){
+				echo $message;
 			}
 			else{
-				$login = htmlspecialchars($_POST['username']);
-				$password = sha1($_POST['password']);
-				$first_name = htmlspecialchars($_POST['first_name']);
-				$last_name = htmlspecialchars($_POST['last_name']);
-
 				$student = array();
-				$student['login'] = $login;
-				$student['password'] = $password;
-				$student['first-name']= $first_name;
-				$student['last-name'] = $last_name;
+				$student['login'] = htmlspecialchars($_POST['username']);
+				$student['password'] = hash("sha256", $_POST['password']);
+				$student['firstName']= htmlspecialchars($_POST['first_name']);
+				$student['lastName'] = htmlspecialchars($_POST['last_name']);
+
+				$promo = array('department' => $_POST['section'],
+											 'year' => $_POST['annee'],
+										 	 'graduation' => $_POST['graduation']);
+
+				$checkProm = $promModel->checkProm($promo);
+				if ($checkProm === false) {
+					$newProm = $promModel->createProm($promo);
+					$student['promID'] = $newProm;
+					$studentModel->createStudent($student);
+					$authController->studentConnexion($student['login'], $student['password']);
+					$err = AuthController::$error;
+					if (empty($err)) {
+						header('Location: ./?section=compte');
+					}
+					else {
+						echo '<div class="alert alert-danger">'.$err.'</div>';
+					}
+				}
+				else {
+					$student['promID'] = $checkProm;
+					$studentModel->createStudent($student);
+					$authController->studentConnexion($student['login'], $student['password']);
+					$err = AuthController::$error;
+					if (empty($err)) {
+						header('Location: ./?section=compte');
+					}
+					else {
+						echo '<div class="alert alert-danger">'.$err.'</div>';
+					}
+				}
 			}
 		}
 	}
+  else if ($_GET['type'] == 'disconnect') {
+    $authController->disconnect();
+    header('Location: ./');
+  }
 
 	include_once('vue/v_connection.php');
 
