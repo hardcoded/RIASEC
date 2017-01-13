@@ -6,11 +6,17 @@
 //    $bd = MaBD::getInstance(); // $bd est un objet PDO
 class DatabaseConnection {
 
+   // // Paramètres pour l'accès à la base
+   // static private $host = "db648137671.db.1and1.com";
+   // static private $database   = "db648137671";
+   // static private $user = "dbo648137671";
+   // static private $password = "piscineRiasec";
+
    // Paramètres pour l'accès à la base
-   static private $host = "db648137671.db.1and1.com";
-   static private $database   = "db648137671";
-   static private $user = "dbo648137671";
-   static private $password = "piscineRiasec";
+   static private $host = "localhost";
+   static private $database   = "riasec";
+   static private $user = "riasec";
+   static private $password = "riasec";
 
    static private $pdo = null; // Le singleton
 
