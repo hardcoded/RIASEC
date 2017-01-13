@@ -1,6 +1,8 @@
 <?php
 
   require_once "Model.php";
+  require_once('PromModel.php');
+  require_once('StudentModel.php');
 
   class SessionModel extends Model {
 
@@ -19,6 +21,31 @@
         exit('<p>Erreur lors de l\'insertion des données dans la table : '.$this->table
              .'<br/>'.$e->getMessage().'</p>');
       }
+    }
+
+    public function getByCode($codeSession) {
+      try {
+        $sql = "SELECT * FROM ".$this->table." WHERE code = :code)";
+        $req = $this->query($sql, array(':code' => $codeSession));
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        return $res;
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors de la recherche des données dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
+    }
+
+    public function checkSession($codeSession, $student) {
+      if ($session = $this->getByCode($codeSession)) {
+        if ($session['prom'] == $student['prom']) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+      return false;
     }
 
   }
