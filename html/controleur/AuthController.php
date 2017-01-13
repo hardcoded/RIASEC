@@ -7,16 +7,24 @@
 
   class AuthController {
 
+    static public $error = "";
+
     public function studentConnexion($login, $password) {
       $studentModel = new StudentModel();
-
+      $error = "";
       if ($student = $studentModel->getByLogin($login)) {
         if ($password == $student['password']) {
-          $data = Array("userID" => $student["ID_student"],
+          $data = array("userID" => $student["ID_student"],
                         "role" => "etudiant");
           $token = $this->generateToken($data);
           setcookie("token", $token, time() + (3600 * 25), "/");
         }
+        else {
+          self::$error = "Mot de passe incorrect";
+        }
+      }
+      else {
+        self::$error = "Etudiant inexistant";
       }
     }
 
@@ -30,6 +38,12 @@
           $token = $this->generateToken($data);
           setcookie("token", $token, time() + (3600 * 25), "/");
         }
+        else {
+          self::$error = "Mot de passe incorrect";
+        }
+      }
+      else {
+        self::$error = "Etudiant inexistant";
       }
     }
 
@@ -54,6 +68,13 @@
         $token = (array) JWT::decode($token,$key,array('HS256'));
         $token["data"] = (array) $token["data"];
         return $token;
+    }
+
+    public function disconnect() {
+      if (isset($_COOKIE['token'])) {
+        setcookie("token", "", time() - 3600, "/");
+        unset($_COOKIE['token']);
+      }
     }
   }
 
