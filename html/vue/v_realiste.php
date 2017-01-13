@@ -79,7 +79,7 @@ table, th, td {
 	<div class = "titre2">
 	TYPE « REALISTE »
 	</div>
-<img src="images/realiste.png" style="margin-left:45%;width:10%;height:10%;">
+<img src="includes/realiste.png" style="margin-left:45%;width:10%;height:10%;">
 
 	<div align="center" style="overflow-x:auto;">
 		 <table style="width:50%">
