@@ -12,7 +12,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
+		<script src="includes/hexagone.js"></script>
 	</head>
 	<body style="background-color: #34495e;">
 
@@ -29,6 +30,11 @@
       </div>
     </div>
 
+		<?php
+			if (!empty($error)) {
+				echo $error;
+			}
+		?>
 
 		<div class="buttonHandlerProfil ">
 			<?php
@@ -39,16 +45,9 @@
 			<span class="histoTitre">
 			Mes résultats
 			</span>
-			<script src="includes/bar.js"></script>
-	  	<script src="includes/hexagone.js"></script>
 
 			<div id='stat' style='max-width:500px;margin:0 auto' class='swipe'>
 		    <div class='swipe-wrap'>
-		      <div>
-		        <canvas id="bar" width="500" height="500">
-		            Message pour les navigateurs ne supportant pas encore canvas.
-		        </canvas>
-		      </div>
 		      <div>
 		        <canvas id="hexagone" width="500" height="500">
 		            Message pour les navigateurs ne supportant pas encore canvas.
@@ -56,15 +55,8 @@
 		      </div>
 		    </div>
 
-		    <script> var ar = <?php echo json_encode($res) ?></script>
-
-		    <script src='includes/swipe.js'></script>
-		    <script> drawBar(ar); drawHexagone(ar);</script>
-		    <script src='includes/drawStat.js'></script>
-
-		    <div style='text-align:center;padding-top:20px;'>
-					<button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
-		  	</div>
+		    <script> var ar = <?php echo json_encode($resArray) ?></script>
+		    <script> drawHexagone(ar); </script>
 			</div>
 
 	<!-- Modal Join -->
@@ -76,10 +68,12 @@
 	        <h4 class="modal-title">Rejoindre une session</h4>
 	      </div>
 	      <div class="modal-body">
-	      	<form action="index.php?section=student&type=code" method="post" >
-		   		<input type="text" class="form-control" placeholder="ID Session" name="codeSession" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
-		   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em;" Value="Rejoindre">
-	      	</form>
+					<div class="modal-body">
+		     	 <form action="index.php?section=student&type=code" method="post" >
+			   		<input type="text" class="form-control" placeholder="Code sessin" name="codeSession" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
+			   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Rejoindre">
+			   	 </form>
+		      </div>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
