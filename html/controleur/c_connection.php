@@ -1,138 +1,145 @@
 <?php
-	
-	include_once('modele/m_connection.php');
+
+	require_once('AuthController.php');
+	require_once('model/PromModel.php');
+	require_once('model/DepartmentModel.php');
+	require_once('model/StudentModel.php');
+	$authController = new AuthController();
+	$promModel = new PromModel();
+	$depModel = new DepartmentModel();
+	$studentModel = new StudentModel();
+
+	$departments = $depModel->getAll();
 
 	//On regarde quel est le formulaire qui a été posté si il y en a eu un
 	if($_GET['type']=='login'){
 	//On vérifie les champs
-		error_reporting(E_ALL);
-
 		if(!empty($_POST)){
 				$retour=1;
+				$message = "";
 			foreach($_POST as $cle=>$val){
 				if(empty($val)){
-					echo '<span class="error">Le champ ',$cle,' est obligatoire.</span>';
-					$retour=0;
+					$message .= '<div class="alert alert-danger">
+    										Le champ <strong>'.$cle.'</strong> est obligatoire.
+  										</div>';
+					$retour=-1;
 				}
 			}
-			if($retour==0){
-				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
+			if($retour==-1){
+				echo $message;
 			}
 			else{
-				$login=htmlspecialchars($_POST['username']);
-				$password=sha1($_POST['password']);
-				$studdent=array();
-				$studdent['login']= $login;
-				$studdent['password']=$password;
-				echo '<div class="formInfo">Vous êtes désormais connecté avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
-				echo'
-				<script type="text/javascript">
-				
-
-					    
-					    window.setTimeout(function(){
-
-					        // Move to a new location or you can do something else
-					        window.location.href = "index.php?section=compte";
-
-					    }, 4000);
-
-								
-				</script>
-				';
-
+				$login = htmlspecialchars($_POST['username']);
+				$password = hash("sha256", $_POST['password']);
+        $authController->studentConnexion($login,$password);
+				$err = AuthController::$error;
+				if (empty($err)) {
+					header('Location: ./?section=compte');
+				}
+				else {
+					echo '<div class="alert alert-danger">'.$err.'</div>';
+				}
 			}
 		}
-
-		
 	}
 	else if($_GET['type']=='loginadmin'){
 	//On vérifie les champs
-		error_reporting(E_ALL);
-
-		if(!empty($_POST)){
+    if(!empty($_POST)){
 				$retour=1;
+				$message = "";
 			foreach($_POST as $cle=>$val){
 				if(empty($val)){
-					echo '<span class="error">Le champ ',$cle,' est obligatoire.</span>';
-					$retour=0;
+					$message .= '<div class="alert alert-danger">
+    										Le champ <strong>'.$cle.'</strong> est obligatoire.
+  										</div>';
+					$retour=-1;
 				}
 			}
-			if($retour==0){
-				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
+			if($retour==-1){
+				echo $message;
 			}
 			else{
-				$login=htmlspecialchars($_POST['username']);
-				$password=sha1($_POST['password']);
-				$studdent=array();
-				$studdent['login']= $login;
-				$studdent['password']=$password;
-				echo '<div class="formInfo">Vous êtes désormais connecté avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
-				echo'
-				<script type="text/javascript">
-				
-
-					    
-					    window.setTimeout(function(){
-
-					        // Move to a new location or you can do something else
-					        window.location.href = "index.php?section=compte";
-
-					    }, 4000);
-
-								
-				</script>
-				';
-
+				$login = htmlspecialchars($_POST['username']);
+				$password = hash("sha256", $_POST['password']);
+        $authController->adminConnexion($login,$password);
+				$err = AuthController::$error;
+				if (empty($err)) {
+					header('Location: ./?section=compte');
+				}
+				else {
+					echo '<div class="alert alert-danger">'.$err.'</div>';
+				}
 			}
-		}
-
-		
-	}
+	  }
+  }
 	else if($_GET['type']=='register'){
 	//On vérifie les champs
 		error_reporting(E_ALL);
 
 		if(!empty($_POST)){
 				$retour=1;
+				$message = "";
 			foreach($_POST as $cle=>$val){
 				if(empty($val)){
-					echo '<span class="error">Le champ ',$cle,' est obligatoire.</span>';
-					$retour=0;
+					$message .= '<div class="alert alert-danger">
+    										Le champ <strong>'.$cle.'</strong> est obligatoire.
+  										</div>';
+					$retour=-1;
 				}
 			}
-			if($retour==0){
-				echo '<a href="javascript:history.go(-1);"><span class="error" style=""></br>Cliquez ici pour corriger le formulaire</span></a>';
+			if($retour==-1){
+				echo $message;
 			}
 			else{
-				$login=htmlspecialchars($_POST['username']);
-				$password=sha1($_POST['password']);
-				$first_name=htmlspecialchars($_POST['first_name']);
-				$last_name=htmlspecialchars($_POST['last_name']);
+				$student = array();
+				$student['login'] = htmlspecialchars($_POST['username']);
+				$student['password'] = hash("sha256", $_POST['password']);
+				$student['firstName']= htmlspecialchars($_POST['first_name']);
+				$student['lastName'] = htmlspecialchars($_POST['last_name']);
 
-				$studdent=array();
-				$studdent['login']= $login;
-				$studdent['password']=$password;
-				echo '<div class="formInfo">Vous êtes désormais inscrit avec succes ! Vous allez être redirigé d\'ici quelques secondes...</div>'; 
-				echo'
-				<script type="text/javascript">
-				
+				$promo = array('department' => $_POST['section'],
+											 'year' => $_POST['annee'],
+										 	 'graduation' => $_POST['graduation']);
 
-					    
-					    window.setTimeout(function(){
-
-					        // Move to a new location or you can do something else
-					        window.location.href = "index.php";
-
-					    }, 4000);
-
-								
-				</script>
-				';
-
+				$checkProm = $promModel->checkProm($promo);
+				if ($checkProm === false) {
+					$newProm = $promModel->createProm($promo);
+					$student['promID'] = $newProm;
+					$studentModel->createStudent($student);
+					$authController->studentConnexion($student['login'], $student['password']);
+					$err = AuthController::$error;
+					if (empty($err)) {
+						header('Location: ./?section=compte');
+					}
+					else {
+						echo '<div class="alert alert-danger">'.$err.'</div>';
+					}
+				}
+				else {
+					$student['promID'] = $checkProm;
+					$studentModel->createStudent($student);
+					$authController->studentConnexion($student['login'], $student['password']);
+					$err = AuthController::$error;
+					if (empty($err)) {
+						header('Location: ./?section=compte');
+					}
+					else {
+						echo '<div class="alert alert-danger">'.$err.'</div>';
+					}
+				}
 			}
 		}
-
 	}
+  else if ($_GET['type'] == 'disconnect') {
+    $authController->disconnect();
+    header('Location: ./?section=index');
+  }
 
-	include_once('vue/v_connection.php');
+	if (!isset($_COOKIE['token'])) {
+    include_once('vue/v_connection.php');
+  }
+  else {
+    require_once('controleur/c_compte.php');
+  }
+
+?>

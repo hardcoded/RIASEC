@@ -2,8 +2,8 @@
 
 CREATE TABLE IF NOT EXISTS student (
   ID_student INTEGER AUTO_INCREMENT,
-  login varchar(20),
-  password varchar(30),
+  login varchar(50),
+  password varchar(100),
   first_name varchar(50),
   last_name varchar(50),
   prom INTEGER,
@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS admin (
   PRIMARY KEY (ID_admin)
 );
 
-ALTER TABLE result ADD FOREIGN KEY (student) REFERENCES student(ID_student);
-ALTER TABLE result ADD FOREIGN KEY (profile) REFERENCES profile(ID_profile);
-ALTER TABLE student ADD FOREIGN KEY (prom) REFERENCES prom(ID_prom);
-ALTER TABLE prom ADD FOREIGN KEY (department) REFERENCES department(ID_department);
+ALTER TABLE result ADD FOREIGN KEY (student) REFERENCES student(ID_student) ON DELETE CASCADE;
+ALTER TABLE result ADD FOREIGN KEY (profile) REFERENCES profile(ID_profile) ON DELETE CASCADE;
+ALTER TABLE student ADD FOREIGN KEY (prom) REFERENCES prom(ID_prom) ON DELETE CASCADE;
+ALTER TABLE prom ADD FOREIGN KEY (department) REFERENCES department(ID_department) ON DELETE CASCADE;
 ALTER TABLE proposition ADD FOREIGN KEY (profile) REFERENCES profile(ID_profile);
-ALTER TABLE session ADD FOREIGN KEY (prom) REFERENCES prom(ID_prom);
+ALTER TABLE session ADD FOREIGN KEY (prom) REFERENCES prom(ID_prom) ON DELETE CASCADE;

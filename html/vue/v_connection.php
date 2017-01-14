@@ -11,10 +11,10 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body style="background-color: #34495e;">
-	
+
 	<div class="titre">
 		Bienvenue
 		<div class="sousTitre">
@@ -38,7 +38,7 @@
      	 <form action="index.php?section=index&type=login" method="post" >
 	   		<input type="text" class="form-control" placeholder="Identifiant" name="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 	   		<input type="password" class="form-control" placeholder="Mot de passe" name="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
-	   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" Value="Se connecter">
+	   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Se connecter">
 	   	 </form>
       </div>
       <div class="modal-footer">
@@ -84,42 +84,30 @@
       </div>
       <div class="modal-body">
       	<form action="index.php?section=index&type=register" method="post" >
-	   		<input type="text" class="form-control" placeholder="Identifiant" name="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
+	   		<input type="text" class="form-control" placeholder="prenom.nom" name="username" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 	   		<input type="password" class="form-control" placeholder="Mot de passe" name="password" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
-	   		<input type="text" class="form-control" placeholder="Nom" name="first_name" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
-	   		<input type="text" class="form-control" placeholder="Prénom" name="last_name" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
+        <input type="text" class="form-control" placeholder="Prénom" name="first_name" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
+        <input type="text" class="form-control" placeholder="Nom" name="last_name" style="width: 45%; margin: 1em auto 0em auto; border-color: #3498db; ">
 	   		<div style="text-align:center; margin: 1em auto 0em auto;">
-	   		<select class="form-control" id="section" style="width: auto; display: inline;">
-        		<option>GBA</option>
-        		<option>IG</option>
-      			<option>MAT</option>
-     		 	<option>MEA</option>
-     		 	<option>MI</option>
-     		 	<option>MSI</option>
-     		 	<option>SE</option>
-     		 	<option>STE</option>
+	   		<select class="form-control" id="section" name="section" style="width: auto; display: inline;">
+        		<?php
+              foreach ($departments as $dep) {
+                echo '<option value="'.$dep['ID_department'].'">'.$dep['label_department'].'</option>';
+              }
+            ?>
      		</select>
-            <select class="form-control" name="section2" style="width: auto; display: inline;">
+            <select class="form-control" name="annee" style="width: auto; display: inline;">
 		        <option>3</option>
 		        <option>4</option>
 		        <option>5</option>
 		     </select>
-		     <select class="form-control" name="annee" style="width: auto; display: inline;">
-		        <option>2016-2017</option>
-		        <option>2017-2018</option>
-		        <option>2018-2019</option>
-		       	<option>2019-2020</option>
-		        <option>2020-2021</option>
-		        <option>2021-2022</option>
-		        <option>2022-2023</option>
-		        <option>2023-2024</option>
-		        <option>2024-2025</option>
-		        <option>2025-2026</option>
-		        <option>2026-2027</option>
-		        <option>2027-2028</option>
-		        <option>2028-2029</option>
-		        <option>2029-2030</option>
-		        <option>2030-2031</option>
+		     <select class="form-control" name="graduation" style="width: auto; display: inline;">
+		        <?php
+              $year = date("Y");
+              for ($i = $year; $i < $year+5; $i++) {
+                echo '<option value="'.$i.'">'.$i.'</option>';
+              }
+            ?>
 		     </select>
 		     </div>
 	   		<input type="submit" class="boutton" style="background-color: #2980b9; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" Value="S'inscrire">

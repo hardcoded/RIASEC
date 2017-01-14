@@ -1,8 +1,21 @@
 <?php
-	
-	include_once('modele/m_compte.php');
-	//************************************************
-	//Ici need que estAdmin = true si l'utilisateur co est admin, false sinon
-	$estAdmin = false;
 
-	include_once('vue/v_compte.php');
+  require_once('AuthController.php');
+
+  $authController = new AuthController();
+
+	//Ici need que estAdmin = true si l'utilisateur co est admin, false sinon
+	if(isset($_COOKIE['token'])) {
+    $tok = $_COOKIE['token'];
+    $token = $authController->decodeToken($tok);
+    $data = $token['data'];
+  	if ($data['role'] == 'etudiant') {
+      header('Location: ./?section=student');
+    }
+    else {
+      header('Location: ./?section=admin');
+    }
+  }
+  else {
+    header('Location: ./');
+  }
