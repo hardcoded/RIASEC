@@ -17,7 +17,7 @@
 	</head>
 	<body style="background-color: #34495e;">
 
-    <div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px;">
       <div class="container-fluid">
           <div class="navbar-header">
               <p class="navbar-text">Bonjour <?php echo $student['first_name'].' '.$student['last_name']; ?></p></li>
@@ -40,9 +40,10 @@
     			foreach($departments as $dep){
     				echo'<tr>
     					<th>'.$dep['label_department'].'</th>
-    					<th>'.$dep['label_department'].'</th>
-    					<th>'.$dep['label_department'].'</th>
-    					<th>'.$dep['label_department'].'</th>
+    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
+    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
+    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
+    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
 	  				</tr>';
 
     				
@@ -62,7 +63,6 @@
 
 
 
-<!-- <span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Creer session</span> -->
 
 	<!-- Modal Join -->
 	<div id="modalCreate" class="modal fade" role="dialog">
