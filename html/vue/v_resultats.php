@@ -21,6 +21,17 @@
 	</div>
   	<script src="includes/bar.js"></script>
   	<script src="includes/hexagone.js"></script>
+  	<div text-align="center">
+  	D'après vos réponses au questionnaire RIASEC. Vous avez un profil de type 
+  	<?php
+  	$profil= <script> Profil(Algorithme());</script>;
+  	echo "$profil"
+  	?>
+  	</br>
+  	<?php
+  	$url = "<a href= ?section=profils&profil=".$profil."">
+    ?>
+    </div>
 
 	<div id='stat' style='max-width:500px;margin:0 auto' class='swipe'>
     <div class='swipe-wrap'>

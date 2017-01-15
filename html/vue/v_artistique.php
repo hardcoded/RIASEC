@@ -67,9 +67,9 @@ table, th, td {
 	</div>
 	<div>
 	<ul>
-	  <li><a href="?section=profils&profil=realiste">Réaliste</a></li>
+	  <li><a class="active" href="?section=profils&profil=realiste">Réaliste</a></li>
 	  <li><a href="?section=profils&profil=investigatif" >Investigatif</a></li>
-	  <li><a class="active" href="?section=profils&profil=artistique">Artistique</a></li>
+	  <li><a href="?section=profils&profil=artistique">Artistique</a></li>
 	  <li><a href="?section=profils&profil=social">Social</a></li>
 	  <li><a href="?section=profils&profil=entrepreneur">Entrepreneur</a></li>
 	  <li><a href="?section=profils&profil=conventionnel">Conventionnel</a></li>
@@ -77,63 +77,76 @@ table, th, td {
 	</div>
 
 	<div class = "titre2">
-	TYPE « ARTISTIQUE »
+	TYPE « REALISTE »
 	</div>
-	<img src="includes/artistique.png" style="margin-left:45%;width:10%;height:10%;" alt= "profil artistique"/>
+<img src="includes/realiste.png" style="margin-left:45%;width:10%;height:10%;">
 
 	<div align="center" style="overflow-x:auto;">
-		 <table style="width:50%">
+		 <table style="width:75%">
 		  <tr>
 		    <th>PRINCIPALES VALEURS ET BESOINS</th>
 		  </tr>
 		  <tr>
-		    <td>Vos principales valeurs sont la beauté, l’originalité, l’indépendance, la sensibilité et
-l’imagination. Vous recherchez l’expression de soi.</td>
+		    <td>
+		    <br/>
+		    Vos principales valeurs sont la tradition, le sens pratique, le bon sens, le goût du travail bien fait. Vous recherchez les résultats concrets.
+			</td>
 		  </tr>
+
 		</table> 
 	</div>
 
-	<div align="center" style="overflow-x:auto;">
-		 <table style="width:50%">
+	<div align="center" text-align="justify" style="overflow-x:auto;">
+		 <table style="width:75%">
 		  <tr>
-		    <td>QUALITES PERSONNELLES</td>
-		    <td>INTERETS PROFESSIONNELS</td>
+		    <td>
+		    </br>QUALITES PERSONNELLES</td>
+		    <td></br>INTERETS PROFESSIONNELS</br></td>
 		  </tr>
 		  <tr>
 		    <td>
-		    		<li>Non-conformisme, idéalisme, curiosité sans bornes, faculté d’adaptation, émotivité,sensibilité,capacitéd’anticipation,originalité, créativité, impulsivité, intuition,indépendance.</li>
-		    		<li>Vous êtes une personne ouverte, expressive,désordonnée, passionnée, de tempérament inquiet et qui ne craint pas les conflits.</li>
-		    		<li>Vous aimez l’introspection.</li>
-		    		<li>Vous possédez des qualités pour ce qui est de nature artistique et ce qui fait appel au « feeling » et à l’émotion.</li>
-		    		<li>Les conditions matérielles et financières ne sont pas les plus importantes pour vous.</li>
+		    		<li>Discipline, persévérance, efficacité, fiabilité, honnêteté, franchise, ambition, souci du travail bien fait, pragmatisme, sens pratique, sens du détail, sens des réalités, méticulosité, habileté manuelle, coordination physique, dextérité, patience, minutie, constance.</li>
+		    		<li>Vous êtes une personne réaliste, concrète, précise, sensée, naturelle, simple et fidèle en amitié.</li>
+		    		<li>Vous aimez les résultats tangibles et voir concrètement le résultat de vos actions.</li>
+		    		<li>Vous aimez le mouvement, l’action, les sensations fortes, agir sur les choses, voir et toucher et avoir une certaine liberté.</li>
+		    		<li>Vous êtes sensible aux récompenses.</li>
 		    </td>
-		    <td>		    		
-		    		<li>Vous savez prendre vos distances par rapport à l’avis partagé par tous.</li>
-		    		<li>Vous savez prendre des initiatives.</li>
-		    		<li>Vous pouvez entraîner les autres.</li>
-		    		<li>Vous êtes capable de faire des entorses aux règles admises, de tout remettre en cause si les résultats ne sont pas à la hauteur de vos ambitions de départ.</li>
-		    		<li>Vous préférez les activités libres, ambiguës et non systématiques.</li>
-		    		<li>Vous faites preuve de discipline dans votre travail.</li>
+		    <td>
+		    </br>		    		
+		    		<li>Intérêt pour les activités ancrées dans la réalité.</li>
+		    		<li>Intérêt pour la manipulation d’objets, d’outils ou de machines.</li>
+		    		<li>Vous savez gérer votre temps et travailler de façon autonome.</li>
+		    		<li>Vous savez partager vos expériences et vos connaissances avec les autres.</li>
+		    		<li>Vous préférez les solutions concrètes et pratiques aux stratégies faisant trop appel à l’imagination.</li>
+		    		<li>Vous aimez construire et réparer.</li>
+		    		<li>Vous aimez conduire des machines.</li>
+		    		<li>Vous possédez un savoir-faire mécanique.</li>
 		    </td>
 		  <tr>
-		    <td>ENVIRONNEMENTS CONSEILLES</td>
-		    <td>POINTS DE VIGILANCE</td>
+		    <td></br>ENVIRONNEMENTS CONSEILLES</td>
+		    <td></br>POINTS DE VIGILANCE</td>
 		  </tr>
 		  <tr>
 		    <td>
-		    		<li>Ceux laissant une grande part à la créativité et à l’improvisation.</li>
-		    		<li>Ceux peu structurés et laissant une grande marge de manœuvre.</li>
-		    		<li>Ceux où chacun peut s’exprimer de manière personnelle à travers ce qu’il fait, lorsqu’il a le sentiment d’apporter quelque chose de personnel et de nouveau.</li>
-		    		<li>Le monde artistique (musique, théâtre,danse, cinéma, écriture...), de la culture, de la communication, de la mode, de la publicité, marketing, événementiel...</li>
-		    		<li>Les conditions matérielles et financières ne sont pas les plus importantes pour vous.</li>
+		    </br>
+		    		<li>Ceux orientés vers la réalisation concrète.</li>
+		    		<li>Ceux qui permettent de travailler seul.</li>
+		    		<li>Ceux de taille restreinte et homogène.</li>
+		    		<li>Ceux assez centrés sur leurs activités.</li>
+		    		<li>Pas trop hiérarchisé et permettant un travail libre et autonome.</li>
+		    		<li>Ceux qui permettent une activité de plein air et qui nécessitent de l’endurance physique.</li>
+		    		<li>Le travail manuel, la maintenance, l’industrie..</li>
 		    </td>
-		    <td>		    		
-		    		<li>Vous n’êtes pas toujours apte à présenter vos projets et idées de façon claire et concrète.</li>
-		    		<li>Vous avez des difficultés à entendre les objections et à vous intégrer dans une équipe, car vous avez un fort besoin de reconnaissance personnelle.</li>
-		    		<li>Vous avez tendance à faire cavalier seul.</li>
-		    		<li>Vous n’êtes pas toujours diplomate.</li>
-		    		<li>Vous manquez d’organisation.</li>
-		    		<li>Vous détestez les activités répétitives,ordonnées et systématiques.</li>
+		    <td>
+		    </br>		    		
+		    		<li>Vous n’êtes pas porté à aller vers les autres.</li>
+		    		<li>Faible intérêt pour la nouveauté.</li>
+		    		<li>Difficultés à se mettre en valeur.</li>
+		    		<li>Faible créativité.</li>
+		    		<li>Pas très à l’aise dans la réflexion et l’abstraction.</li>
+		    		<li>Vous parlez peu de vous même, êtes peu intuitif et peu perspicace.</li>
+		    		<li>Vous n’aimez pas les activités à caractère social, pédagogique et thérapeutique</li>
+
 		    </td>
 		  </tr>
 		</table> 
@@ -142,7 +155,7 @@ l’imagination. Vous recherchez l’expression de soi.</td>
 
 
 	 <div text-align="center">
-  	Revenir à mes résultats <a href = "?=section='résultats'"> </a>
+  	Revenir à mes résultats <a href = "?=section='résultats'">ici </a>
   	</div>
 
   <div text-align="center">
