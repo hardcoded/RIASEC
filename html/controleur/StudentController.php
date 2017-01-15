@@ -28,7 +28,7 @@
         header('Location: ./?section=qcm');
       }
       else {
-        echo '<div class="alert alert-danger">Code incorrect</div>';
+        $error = '<div class="alert alert-danger">Code incorrect</div>';
       }
     }
     include_once('vue/v_student.php');
