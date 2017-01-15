@@ -77,7 +77,7 @@ function nextGroupe(){ // Changement du groupe de question
       next_fs = document.getElementById("progress"+(current+1)); // Avancement de la timeline
       listQuestion = document.getElementsByName("label") // Recupere la zone de texte des question
       for (var i = 0; i < listQuestion.length; i++) {
-        listQuestion[i].innerHTML = question["groupe"+(current+1)][i] //Change le contenu de toutes les question a partir des données dans le fichier question.js (a changer par la bdd plus tard)
+        listQuestion[i].innerHTML = question[current+1][i] //Change le contenu de toutes les question a partir des données dans le fichier question.js (a changer par la bdd plus tard)
       }
       next_fs.className = "active"
       if(document.getElementsByName("prev")[0].hidden && current != 0){ // Si le bouton precedent est cacher et que l'on ai plus au premier, on l'affiche
@@ -225,4 +225,3 @@ function Algorithme(){
   }
   return score;
   }
-
