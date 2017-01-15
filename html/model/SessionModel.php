@@ -25,7 +25,7 @@
 
     public function getByCode($codeSession) {
       try {
-        $sql = "SELECT * FROM ".$this->table." WHERE code = :code)";
+        $sql = "SELECT * FROM ".$this->table." WHERE code = :code";
         $req = $this->query($sql, array(':code' => $codeSession));
         $res = $req->fetch(PDO::FETCH_ASSOC);
         return $res;
