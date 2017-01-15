@@ -11,27 +11,16 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
 	</head>
 	<body style="background-color: #34495e;">
-	
+
 	<div class="titreProfil">
 		Mes résultats
 	</div>
   	<script src="includes/bar.js"></script>
   	<script src="includes/hexagone.js"></script>
-  	<div text-align="center">
-  	D'après vos réponses au questionnaire RIASEC. Vous avez un profil de type 
-  	<?php
-  	$profil= <script> Profil(Algorithme());</script>;
-  	echo "$profil"
-  	?>
-  	</br>
-  	<?php
-  	$url = "<a href= ?section=profils&profil=".$profil."">
-    ?>
-    </div>
 
 	<div id='stat' style='max-width:500px;margin:0 auto' class='swipe'>
     <div class='swipe-wrap'>
@@ -56,8 +45,8 @@
 
     <script src='includes/swipe.js'></script>
     <script> drawBar(ar); drawHexagone(ar);</script>
-	
-    
+
+
     <script src='includes/drawStat.js'></script>
 
     <div style='text-align:center;padding-top:20px;'>
