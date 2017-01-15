@@ -55,8 +55,10 @@
 		      </div>
 		    </div>
 
-		    <script> var ar = <?php echo json_encode($resArray) ?></script>
-		    <script> drawHexagone(ar); </script>
+		    <script>
+					var ar = <?php echo json_encode($resArray) ?>;
+					drawHexagone(ar);
+				</script>
 			</div>
 
 	<!-- Modal Join -->
@@ -70,7 +72,7 @@
 	      <div class="modal-body">
 					<div class="modal-body">
 		     	 <form action="index.php?section=student&type=code" method="post" >
-			   		<input type="text" class="form-control" placeholder="Code sessin" name="codeSession" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
+			   		<input type="text" class="form-control" placeholder="Code session" name="codeSession" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 			   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Rejoindre">
 			   	 </form>
 		      </div>
