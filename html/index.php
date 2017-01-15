@@ -10,10 +10,10 @@
 		include_once('controleur/c_compte.php');
 	}
   else if($_GET['section']=='student'){
-		include_once('controleur/StudentController.php');
+		include_once('controleur/c_studdent.php');
 	}
   else if($_GET['section']=='admin'){
-		include_once('controleur/AdminController.php');
+		include_once('controleur/c_admin.php');
 	}
 	else if($_GET['section']=='resultats'){
 		include_once('controleur/c_resultats.php');

@@ -1,6 +1,6 @@
 <?php
 
-  require_once('AuthController.php');
+  require_once('c_auth.php');
   require_once('model/ResultModel.php');
   require_once('model/StudentModel.php');
   require_once('model/SessionModel.php');
