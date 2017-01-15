@@ -63,7 +63,7 @@ function nextGroupe(){ // Changement du groupe de question
   if(current == 12 && checkedBox == 3){ // Si on en etait au dernier groupe de question on affiche les stats !!!!! La condition "!(checkedBox == 3)" doit etre inversée, c'est juste pour debugger simplement
     saveCheckbox();
     result = Algorithme();
-    window.location = "controleur/c_resultats.php?r="+ result[0]+"&i=" + result[1]+"&a=" + result[2]+"&s=" + result[3]+"&e=" + result[4]+"&c=" + result[5];
+    window.location = "?section=resultats&r="+ result[0]+"&i=" + result[1]+"&a=" + result[2]+"&s=" + result[3]+"&e=" + result[4]+"&c=" + result[5];
     ajax({
       url: 'controleur/c_resultats.php',
       data: 'r='+ result[0]+'&i=' + result[1]+'&a=' + result[2]+'&s=' + result[3]+'&e=' + result[4]+'&c=' + result[5],
