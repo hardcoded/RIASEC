@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Riasec</title>
+  <title>QCM - Riasec</title>
 
   <link rel="stylesheet" href="css.css">
 

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<title>Riasec</title>
+		<title>Artistique - Riasec</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="includes/jquery-3.1.1.min.js"></script>
 		<!-- Latest compiled and minified CSS -->
