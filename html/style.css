@@ -57,6 +57,20 @@ body{
 	font-size: 4em;
 	padding-left: 0.5em;
 }
+.tabPromoSession{
+	display: inline-block;
+	position: absolute;
+	width:65%;
+	height: 100%;
+
+	text-align: center;
+	font-size: 1.3em;
+	margin-left: 5%;
+	padding: 1em 5em 1em 5em;
+}
+.tabPromoSession table {
+	width: 100%;
+}
 .buttonHandlerProfil{
 	display: inline-block;
 	width:25%;
