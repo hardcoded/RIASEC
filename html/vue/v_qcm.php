@@ -5,8 +5,8 @@
   <title>QCM - Riasec</title>
 
   <link rel="stylesheet" href="css.css">
+  <script> var question = <?php echo json_encode($array) ?></script>
 
-  <script src="includes/question.js"></script>
   <script src="includes/table.js"></script>
   <script src="includes/bar.js"></script>
   <script src="includes/hexagone.js"></script>
