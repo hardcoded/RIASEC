@@ -61,13 +61,16 @@ function saveCheckbox(){ // Sauvegarde les cases cocher dans une liste
 
 function nextGroupe(){ // Changement du groupe de question
   if(current == 12 && checkedBox == 3){ // Si on en etait au dernier groupe de question on affiche les stats !!!!! La condition "!(checkedBox == 3)" doit etre inversée, c'est juste pour debugger simplement
-    //window.location = "http://teabreak.fr/riasec/Statistique/index.html";
     saveCheckbox();
-    document.getElementById("msform").hidden = true
-    document.getElementById("stat").hidden = false
-    drawBar();
-    drawHexagone();
-    change()
+    result = Algorithme();
+    window.location = "controleur/c_resultats.php?r="+ result[0]+"&i=" + result[1]+"&a=" + result[2]+"&s=" + result[3]+"&e=" + result[4]+"&c=" + result[5];
+    ajax({
+      url: 'controleur/c_resultats.php',
+      data: 'r='+ result[0]+'&i=' + result[1]+'&a=' + result[2]+'&s=' + result[3]+'&e=' + result[4]+'&c=' + result[5],
+      success: function(reponse) {
+        alert(reponse); // reponse contient l'affichage du fichier PHP (soit echo)
+      }
+    });
   }
   else{
     if(checkedBox == 3 || first){ // Les 3 cases sont cocher (le code correspond pas c'est pour debugger plus simplement) ou que c'est la premiere fois on passe au prochain
