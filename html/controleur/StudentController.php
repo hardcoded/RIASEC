@@ -24,7 +24,7 @@
                  $results[5]['percentage']];
 
     if ($_GET['type'] == 'code') {
-      if ($sessionModel->getByCode($_POST['codeSession']) === true) {
+      if ($sessionModel->checkSession($_POST['codeSession']) === true) {
         header('Location: ./?section=qcm');
       }
       else {
