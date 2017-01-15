@@ -1,6 +1,6 @@
 <?php
 
-  require_once('AuthController.php');
+  require_once('c_auth.php');
 
   $authController = new AuthController();
 
