@@ -6,7 +6,6 @@
 body{
 	font-family: montserrat, arial, verdana;
 	background-color: #34495e;
-	overflow-y: hidden;
 }
 .error{
 	color:white;
