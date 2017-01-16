@@ -1,12 +1,21 @@
 <?php
 
   require_once "Model.php";
-  require_once('PromModel.php');
-  require_once('StudentModel.php');
 
+  /**
+   * Classe permettant l'interaction avec la table "session"
+   * Hérite de la classe Model
+   * @author JohanBrunet
+   */
   class SessionModel extends Model {
 
+    /**
+     * @var $pk_key clé primaire de la table
+     */
     protected $pk_key = 'ID_session';
+    /**
+     * @var $table table de la base de données utilisée par la classe
+     */
     protected $table = 'session';
 
     public function createSession($session) {

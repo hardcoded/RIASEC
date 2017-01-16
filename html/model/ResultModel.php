@@ -2,8 +2,16 @@
 
   require_once "Model.php";
 
+  /**
+   * Classe permettant l'interaction avec la table "result"
+   * Hérite de la classe Model
+   * @author JohanBrunet
+   */
   class ResultModel extends Model {
 
+    /**
+     * @var $table table de la base de données utilisée par la classe
+     */
     protected $table = 'result';
 
     public function storeResult($student, $results) {

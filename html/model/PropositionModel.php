@@ -2,10 +2,24 @@
 
   require_once "Model.php";
 
+  /**
+   * Classe permettant l'interaction avec la table "proposition"
+   * Hérite de la classe Model
+   * @author JohanBrunet
+   */
   class PropositionModel extends Model {
 
+    /**
+     * @var $pk_key_id première clé primaire de la table
+     */
     protected $pk_key_id = 'ID_proposition';
+    /**
+     * @var $pk_key_grp seconde clé primaire de la table
+     */
     protected $pk_key_grp = 'groupe';
+     /**
+     * @var $table table de la base de données utilisée par la classe
+     */
     protected $table = 'proposition';
 
     public function editLabel($id, $group, $newLabel) {

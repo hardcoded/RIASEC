@@ -2,9 +2,20 @@
 
   require_once "Model.php";
 
+  /**
+   * Classe permettant l'interaction avec la table "prom"
+   * Hérite de la classe Model
+   * @author JohanBrunet
+   */
   class PromModel extends Model {
 
+    /**
+     * @var $pk_key clé primaire de la table
+     */
     protected $pk_key = 'ID_prom';
+    /**
+     * @var $table table de la base de données utilisée par la classe
+     */
     protected $table = 'prom';
 
     public function createProm($prom) {
