@@ -43,7 +43,7 @@
 
     					foreach ($tabSession as $tabS) {
     						if($tabS['label_department']==$dep['label_department']){
-    							echo'<td><a href="?section=resultats&Promo='.$tabS['ID_Promo'].'"><span type="button" class="bouttonTab">'.$tabS['code'].'</span></a></td>';
+    							echo'<td><a href="?section=resultats&Promo='.$tabS['ID_prom'].'"><span type="button" class="bouttonTab">'.$tabS['code'].'</span></a></td>';
     						}
     					}
 	  				echo'</tr>';
