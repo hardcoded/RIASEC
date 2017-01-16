@@ -36,5 +36,16 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
+
+    public function deleteByStudent($studentID) {
+      try {
+        $sql = "DELETE FROM ".$this->table." WHERE student = :student";
+        $req = $this->query($sql, array(':student' => $studentID));
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors de l\'insertion des données dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
+    }
   }
 ?>
