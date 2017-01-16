@@ -14,6 +14,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
 		<script src="includes/hexagone.js"></script>
+		<script src="includes/bar.js"></script>
 	</head>
 	<body style="background-color: #34495e;">
 
@@ -47,19 +48,35 @@
 			</span>
 
 			<div id='stat' style='max-width:500px;margin:0 auto' class='swipe'>
-		    <div class='swipe-wrap'>
-		      <div>
-		        <canvas id="hexagone" width="500" height="500">
-		            Message pour les navigateurs ne supportant pas encore canvas.
-		        </canvas>
-		      </div>
-		    </div>
+			    <div class='swipe-wrap'>
 
-		    <script>
-					var ar = <?php echo json_encode($resArray) ?>;
-					drawHexagone(ar);
-				</script>
-			</div>
+
+			      <div>
+			              <canvas id="bar" width="500" height="500">
+			                  Message pour les navigateurs ne supportant pas encore canvas.
+			              </canvas>
+			      </div>
+
+			      <div>
+				        <canvas id="hexagone" width="500" height="500">
+				            Message pour les navigateurs ne supportant pas encore canvas.
+				        </canvas>
+			      </div>
+
+			    </div>
+
+			    <script>var ar = <?php echo json_encode($resArray) ?> </script>
+
+				<script src='includes/swipe.js'></script>
+				<script>drawBar(ar); drawHexagone(ar);</script>
+
+				<script src='includes/drawStat.js'></script>
+
+			<div style='text-align:center;padding-top:20px;'>
+
+		 <button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
+		</div>
+
 
 	<!-- Modal Join -->
 	<div id="modalJoin" class="modal fade" role="dialog">
