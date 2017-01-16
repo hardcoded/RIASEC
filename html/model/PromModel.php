@@ -42,12 +42,14 @@
 
       foreach ($proms as $prom) {
         if (($prom['department'] == $promo['department']) && ($prom['year_prom'] == $promo['year']) && $prom['graduation_year'] == $promo['graduation']) {
-          return $prom['ID_prom'];
+          $res = $prom['ID_prom'];
+          break;
         }
         else {
-          return false;
+          $res = false;
         }
       }
+      return $res;
     }
   }
 ?>

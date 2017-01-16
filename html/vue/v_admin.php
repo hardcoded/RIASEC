@@ -20,7 +20,7 @@
     <div class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px;">
       <div class="container-fluid">
           <div class="navbar-header">
-              <p class="navbar-text">Bonjour <?php echo $student['first_name'].' '.$student['last_name']; ?></p></li>
+              <p class="navbar-text">Bonjour <?php echo $admin['login']; ?></p></li>
           </div>
           <div class="navbar-right">
 						<form action="index.php?section=index&type=disconnect" method="post" >
@@ -36,11 +36,11 @@
 	</div>
     <div class="tabPromoSession">
     	<table>
-       			<?php 
+       			<?php
     			foreach($departments as $dep){
     				echo'<tr>
     					<th>'.$dep['label_department'].'</th>';
-    					
+
     					foreach ($tabSession as $tabS) {
     						if($tabS['label_department']==$dep['label_department']){
     							echo'<td><a href="?section=resultats&Promo='.$tabS['ID_Promo'].'"><span type="button" class="bouttonTab">'.$tabS['code'].'</span></a></td>';
@@ -48,24 +48,12 @@
     					}
 	  				echo'</tr>';
 
-    				
+
     			} ?>
 
 
     	</table>
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
 
 	<!-- Modal Join -->
 	<div id="modalCreate" class="modal fade" role="dialog">
@@ -77,7 +65,29 @@
 	      </div>
 	      <div class="modal-body">
 					<div class="modal-body">
-		     	 <form action="index.php?section=student&type=code" method="post" >
+		     	 <form action="index.php?section=admin&type=code" method="post" >
+						 <div style="text-align:center; margin: 1em auto 0em auto;">
+	 			   		<select class="form-control" id="section" name="section" style="width: auto; display: inline;">
+	 		        		<?php
+	 		              foreach ($departments as $dep) {
+	 		                echo '<option value="'.$dep['ID_department'].'">'.$dep['label_department'].'</option>';
+	 		              }
+	 		            ?>
+	 		     		</select>
+	 		            <select class="form-control" name="annee" style="width: auto; display: inline;">
+	 				        <option>3</option>
+	 				        <option>4</option>
+	 				        <option>5</option>
+	 				     </select>
+	 				     <select class="form-control" name="graduation" style="width: auto; display: inline;">
+	 				        <?php
+	 		              $year = date("Y");
+	 		              for ($i = $year; $i < $year+5; $i++) {
+	 		                echo '<option value="'.$i.'">'.$i.'</option>';
+	 		              }
+	 		            ?>
+	 				     </select>
+ 				     </div>
 			   		<input type="text" class="form-control" placeholder="Code session" name="codeSession" style="width: 45%; margin: 0em auto 0em auto; border-color: #3498db; ">
 			   		<input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Creer">
 			   	 </form>
