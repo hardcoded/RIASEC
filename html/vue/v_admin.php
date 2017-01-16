@@ -39,15 +39,18 @@
        			<?php 
     			foreach($departments as $dep){
     				echo'<tr>
-    					<th>'.$dep['label_department'].'</th>
-    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
-    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
-    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
-    					<td><span type="button" class="bouttonTab">'.$dep['label_department'].'</span></th>
-	  				</tr>';
+    					<th>'.$dep['label_department'].'</th>';
+    					
+    					foreach ($tabSession as $tabS) {
+    						if($tabS['label_department']==$dep['label_department']){
+    							echo'<td><a href="?section=resultats&Promo='.$tabS['ID_Promo'].'"><span type="button" class="bouttonTab">'.$tabS['code'].'</span></a></td>';
+    						}
+    					}
+	  				echo'</tr>';
 
     				
     			} ?>
+
 
     	</table>
 
