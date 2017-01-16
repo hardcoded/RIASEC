@@ -9,7 +9,6 @@
     public function storeResult($student, $results) {
       $sql = "INSERT INTO ".$this->table." (student, profile, percentage) VALUES (:student, :type, :percentage)";
       foreach ($results as $result) {
-              var_dump($result);
         try {
           $req = $this->query($sql, array(':student' => $student['ID_student'],
                                           ':type' => $result['type'],
