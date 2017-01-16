@@ -61,6 +61,7 @@
           $error = '<div class="alert alert-danger">Erreur lors de la création de la session <stong>'.$session['code'].'</stong> !</div>';
         }
       }
+      header('Refresh: 2, url=./?section=admin');
     }
     include_once('vue/v_admin.php');
   }
