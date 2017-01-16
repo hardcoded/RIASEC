@@ -15,6 +15,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
 		<script src="includes/hexagone.js"></script>
 		<script src="includes/bar.js"></script>
+		<script src="includes/affichageprofil.js"></script>
 	</head>
 	<body style="background-color: #34495e;">
 
@@ -22,6 +23,11 @@
       <div class="container-fluid">
           <div class="navbar-header">
               <p class="navbar-text">Bonjour <?php echo $student['first_name'].' '.$student['last_name']; ?></p></li>
+          </div>
+          <div class="navbar-header">
+						<form action="./?section=profils&profil=realiste" method="post" >
+							<button type="submit" class="btn btn-link navbar-btn">Profils</button>
+						</form>
           </div>
           <div class="navbar-right">
 						<form action="index.php?section=index&type=disconnect" method="post" >
@@ -41,6 +47,7 @@
 			<?php
 				echo'<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Rejoindre session</span>';
 			?>
+			<div id='message' style="color: white"></div>
 		</div>
 		<div class="histoHandlerProfil" style="margin-top: 20px">
 			<div id='stat' style='max-width:500px;margin:0 auto' class='swipe'>
@@ -72,6 +79,11 @@
 
 		 <button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
 		</div>
+
+		<script>
+			var profil = Profil(ar);
+			document.getElementById('message').innerHTML = 'D\'après vos réponses au questionnaire RIASEC, vous avez un profil de type <a href = "?section=profils&profil=' + profil + '">' + profil + '</a>';
+		</script>
 
 
 	<!-- Modal Join -->
