@@ -107,7 +107,7 @@ if(!document.getElementsByName("prev")[0].hidden && current == 2){ // Si on pass
   current_fs = document.getElementById("progress"+current); // Timeline
   listQuestion = document.getElementsByName("label") //recup zone question
   for (var i = 0; i < listQuestion.length; i++) {
-    listQuestion[i].innerHTML = question["groupe"+(current-1)][i] //Change le texte des question
+    listQuestion[i].innerHTML = question[current-1][i] //Change le texte des question
   }
   current_fs.className = ""
   current-- // On decrement le groupe courant
