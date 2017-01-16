@@ -12,52 +12,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
-<style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #2c3e50;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto;
-}
 
-li a {
-	text-align: center;
-    display: block;
-    color: #FFFFFF;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color on hover */
-li a:hover {
-    background-color: #555;
-    color: white;
-}
-.active {
-    background-color: #34495e;
-    color: white;
-}
-
- th {
-    background-color: #2c3e50;
-    color: white;
-}
-table {
-    border-collapse: collapse;
-}
-
-table, th, td {
-    text-align: center;
-}
- th, td {
- 	color: white;
-    border-bottom: 1px solid #FFFFFF;
-}
-</style>
 	</head>
 	<body style="background-color: #34495e;">
 	

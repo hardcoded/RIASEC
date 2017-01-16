@@ -93,6 +93,10 @@ body{
 	text-align: center;
 	color: white;
 	padding: 1em 0.3em 1em 0.3em;
+	border-bottom: 0px solid #FFFFFF;
+}
+.tabPromoSession td {
+	border-bottom: 0px solid #FFFFFF;
 }
 .buttonHandlerProfil{
 	display: inline-block;
@@ -176,6 +180,50 @@ body{
 	background-color: #2980b9;
 	font-size: 3em;
 
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #2c3e50;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto;
+}
+
+li a {
+	text-align: center;
+    display: block;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+.active {
+    background-color: #34495e;
+    color: white;
+}
+
+ th {
+    background-color: #2c3e50;
+    color: white;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    text-align: center;
+}
+ th, td {
+ 	color: white;
+    border-bottom: 1px solid #FFFFFF;
 }
 input[type="submit"],
 input[type="reset"],
