@@ -2,30 +2,26 @@
 
   require_once "Model.php";
 
-  /**
-   * Classe permettant l'interaction avec la table "result"
-   * Hérite de la classe Model
-   * @author JohanBrunet
-   */
   class ResultModel extends Model {
 
-    /**
-     * @var $table table de la base de données utilisée par la classe
-     */
     protected $table = 'result';
 
     public function storeResult($student, $results) {
-      $sql = "INSERT INTO ".$this->table." (student, type, percentage) VALUES (:student, :type, :percentage)";
+      $sql = "INSERT INTO ".$this->table." (student, profile, percentage) VALUES (:student, :type, :percentage)";
       foreach ($results as $result) {
+              var_dump($result);
         try {
           $req = $this->query($sql, array(':student' => $student['ID_student'],
                                           ':type' => $result['type'],
                                           ':percentage' => $result['percentage']));
         }
         catch(PDOException $e){
+
           exit('<p>Erreur lors de l\'insertion des données dans la table : '.$this->table
                .'<br/>'.$e->getMessage().'</p>');
         }
+        //var_dump($student['ID_student']);
+        //var_dump($result['type']);
       }
     }
 
