@@ -20,8 +20,13 @@
     <div class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px;">
       <div class="container-fluid">
           <div class="navbar-header">
-              <p class="navbar-text">Bonjour <?php echo $admin['login']; ?></p></li>
+						<p class="navbar-text">Bonjour <?php echo $admin['login']; ?></p>
           </div>
+					<div class="navbar-header">
+						<form action="index.php?section=editQCM" method="post" >
+	  					<button type="submit" class="btn btn-link navbar-btn">Modifier questionnaire</button>
+	  				</form>
+					</div>
           <div class="navbar-right">
 						<form action="index.php?section=index&type=disconnect" method="post" >
 							<button type="submit" class="btn btn-link navbar-btn">Déconnexion</button>
@@ -29,6 +34,16 @@
           </div>
       </div>
     </div>
+
+		<?php
+			if (!empty($error)) {
+				echo $error;
+			}
+			else if (!empty($succes)) {
+				echo $succes;
+			}
+		?>
+
     <div class="buttonHandlerProfil ">
 			<?php
 				echo'<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalCreate">Creer session</span>';

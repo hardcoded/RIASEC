@@ -41,7 +41,26 @@
                          'date' => date('Y-m-d'),
                          'prom' => $checkProm);
       }
-      $sessionModel->createSession($session);
+      foreach ($sessions as $s) {
+        if (($session['code'] == $s['code']) && ($session['prom'] == $s['prom'])) {
+          $exists = true;
+          break;
+        }
+        else {
+          $exists = false;
+        }
+      }
+      if ($exists) {
+        $error = '<div class="alert alert-warning">Le code <stong>'.$session['code'].'</stong> existe déjà pour cette promo !</div>';
+      }
+      else {
+        if ($sessionModel->createSession($session)) {
+          $succes = '<div class="alert alert-success">La session <stong>'.$session['code'].'</stong> a été créée avec succès !</div>';
+        }
+        else {
+          $error = '<div class="alert alert-danger">Erreur lors de la création de la session <stong>'.$session['code'].'</stong> !</div>';
+        }
+      }
     }
     include_once('vue/v_admin.php');
   }
