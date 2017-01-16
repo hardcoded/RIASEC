@@ -57,5 +57,17 @@
       return false;
     }
 
+    public function getSessionDepartment() {
+      try {
+        $sql = "SELECT label_department,code,ID_prom FROM department d,prom p,session s WHERE d.ID_department = p.department AND p.ID_prom = s.prom";
+        $req = $this->query($sql);
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors de la recherche des données dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
+    }
   }
 ?>

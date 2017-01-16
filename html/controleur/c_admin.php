@@ -16,11 +16,13 @@
   }
   else {
     $data = $authController->decodeToken($_COOKIE['token'])['data'];
-    $admin = $adminModel->getById($data['ID_admin']);
+    $admin = $adminModel->getById($data['adminID']);
     $departments = $depModel->getAll();
   	$sessions = $sessionModel->getAll();
   	$promos= $promModel->getAll();
-  	$tabSession = NULL;
+
+    // Resultat de la requete que tu m'as demandé Tristan
+    $tabSession = $sessionModel->getSessionDepartment();
 
     if ($_GET['type'] == 'code') {
       $promo = array('department' => $_POST['section'],
