@@ -18,7 +18,7 @@
 	</head>
 	<body style="background-color: #34495e;">
 
-    <div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar navbar-inverse" style="margin-bottom: -20px" role="navigation">
       <div class="container-fluid">
           <div class="navbar-header">
               <p class="navbar-text">Bonjour <?php echo $student['first_name'].' '.$student['last_name']; ?></p></li>
@@ -37,16 +37,12 @@
 			}
 		?>
 
-		<div class="buttonHandlerProfil ">
+		<div class="buttonHandlerProfil">
 			<?php
 				echo'<span type="button" class="bouttonProfil" data-toggle="modal" data-target="#modalJoin">Rejoindre session</span>';
 			?>
 		</div>
-		<div class="histoHandlerProfil ">
-			<span class="histoTitre">
-			Mes résultats
-			</span>
-
+		<div class="histoHandlerProfil" style="margin-top: 20px">
 			<div id='stat' style='max-width:500px;margin:0 auto' class='swipe'>
 			    <div class='swipe-wrap'>
 
@@ -72,7 +68,7 @@
 
 				<script src='includes/drawStat.js'></script>
 
-			<div style='text-align:center;padding-top:20px;'>
+			<div style='text-align:center;'>
 
 		 <button onclick='change()' class="button" style="vertical-align:middle"><span>Change </span></button>
 		</div>

@@ -105,28 +105,19 @@
 				if ($checkProm === false) {
 					$newProm = $promModel->createProm($promo);
 					$student['promID'] = $newProm;
-					$studentModel->createStudent($student);
-					$authController->studentConnexion($student['login'], $student['password']);
-					$err = AuthController::$error;
-					if (empty($err)) {
-						header('Location: ./?section=compte');
-					}
-					else {
-						echo '<div class="alert alert-danger">'.$err.'</div>';
-					}
 				}
 				else {
 					$student['promID'] = $checkProm;
-					$studentModel->createStudent($student);
-					$authController->studentConnexion($student['login'], $student['password']);
-					$err = AuthController::$error;
-					if (empty($err)) {
-						header('Location: ./?section=compte');
-					}
-					else {
-						echo '<div class="alert alert-danger">'.$err.'</div>';
-					}
 				}
+        $studentModel->createStudent($student);
+        $authController->studentConnexion($student['login'], $student['password']);
+        $err = AuthController::$error;
+        if (empty($err)) {
+          header('Location: ./?section=compte');
+        }
+        else {
+          echo '<div class="alert alert-danger">'.$err.'</div>';
+        }
 			}
 		}
 	}
