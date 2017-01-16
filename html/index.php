@@ -21,3 +21,6 @@
 	else if($_GET['section']=='profils'){
 		include_once('controleur/c_profils.php');
 	}
+	else if($_GET['section']=='edit'){
+		include_once('controleur/c_edit.php');
+	}
