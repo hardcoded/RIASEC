@@ -32,9 +32,13 @@
 			array('type' => 4,'percentage' => $resultat[3]),
 			array('type' => 5,'percentage' => $resultat[4]),
 			array('type' => 6,'percentage' => $resultat[5])];
-			var_dump($student);
+			$tmp = $resultModel->getByStudent($IDstudent);
+			if(!empty($tmp)){
+				$resultModel->deleteByStudent($IDstudent);
+			}
 			$resultModel->storeResult($student,$resultat_stock);
-			include_once('vue/v_student.php');
+			header('Location: ./?section=student');
+			//include_once('controleur/c_studdent.php');
 		}
 		else{
 			include_once('vue/v_resultats.php');
