@@ -42,7 +42,7 @@
 		}
 	}
 	else if ($status == 'admin'){
-		$prom = "1";// il faut faire un $_GET et récupérer ce qui est envoyé à partir de la page admin
+		$prom = intval($_GET['Promo']);// il faut faire un $_GET et récupérer ce qui est envoyé à partir de la page admin
 		$resultatTotal = array(6);
 		$cpt = 0;
 		$section = $studentModel->getByProm($prom);
