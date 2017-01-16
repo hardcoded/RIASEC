@@ -2,20 +2,9 @@
 
   require_once "Model.php";
 
-  /**
-   * Classe permettant l'interaction avec la table "student"
-   * Hérite de la classe Model
-   * @author JohanBrunet
-   */
   class StudentModel extends Model {
 
-    /**
-     * @var $pk_key clé primaire de la table
-     */
     protected $pk_key = 'ID_student';
-    /**
-     * @var $table table de la base de données utilisée par la classe
-     */
     protected $table = 'student';
 
     public function createStudent($student) {
@@ -67,6 +56,18 @@
       }
       catch (PDOException $e) {
         exit('<p>Erreur lors de la mise à jour dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
+    }
+    public function getByProm($prom) {
+      try{
+        $sql = 'SELECT * FROM '.$this->table.' WHERE prom = :prom';
+        $req = $this->query($sql,array(":prom"=>$prom));
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors de la selection de l\'objet dans la table : '.$this->table
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
