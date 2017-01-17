@@ -19,7 +19,7 @@
 		Mode Edition
 	</div>
   <div style="display: block; width: 75%; margin:auto;">
-  <form action="index.php?section=edit" method="post">
+  <!-- <form action="index.php?section=edit" method="post"> -->
 
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -30,17 +30,22 @@
         </a>
       </h4>
     </div>
+    <form action="index.php?section=edit&type=store" method="post" >
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
-            if($tabP['groupe']==1){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+        <div class="panel-body">
+          <input type="hidden" name="group" value="1"/>
+          <?php
+            foreach ($tabProp as $tabP) {
+              if($tabP['groupe']==1){
+                echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+                echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
+              }
             }
-        }?>
-      </div>
+          ?>
+          <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
+        </div>
     </div>
+    </form>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
@@ -50,17 +55,22 @@
         </a>
       </h4>
     </div>
+    <form action="index.php?section=edit&type=store" method="post" >
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="2"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==2){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
+    </form>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
@@ -70,17 +80,22 @@
         </a>
       </h4>
     </div>
+    <form action="index.php?section=edit&type=store" method="post" >
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="3"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==3){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
+    </form>
   </div>
     <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingFour">
@@ -90,19 +105,23 @@
         </a>
       </h4>
     </div>
+    <form action="index.php?section=edit&type=store" method="post" >
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="4"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==4){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
-
-</div>
+    </form>
+    </div>
     <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingFive">
       <h4 class="panel-title">
@@ -111,17 +130,22 @@
         </a>
       </h4>
     </div>
+    <form action="index.php?section=edit&type=store" method="post" >
     <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="5"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==5){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
+    </form>
 
 </div>
     <div class="panel panel-default">
@@ -132,17 +156,22 @@
         </a>
       </h4>
     </div>
+    <form action="index.php?section=edit&type=store" method="post" >
     <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="6"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==6){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
+  </form>
 
 </div>
     <div class="panel panel-default">
@@ -155,13 +184,16 @@
     </div>
     <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="7"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==7){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
 
@@ -176,13 +208,16 @@
     </div>
     <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="8"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==8){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
 
@@ -197,13 +232,16 @@
     </div>
     <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="9"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==9){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
 
@@ -218,13 +256,16 @@
     </div>
     <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
-            if($tabP['groupe']==10){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+        <input type="hidden" name="group" value="10"/>
+        <?php
+          foreach ($tabProp as $tabP) {
+            if($tabP['groupe']== 10){
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
 
@@ -239,13 +280,16 @@
     </div>
     <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="11"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==11){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
 
@@ -260,13 +304,16 @@
     </div>
     <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
       <div class="panel-body">
-        <?php     foreach ($tabProp as $tabP) {
+        <input type="hidden" name="group" value="12"/>
+        <?php
+          foreach ($tabProp as $tabP) {
             if($tabP['groupe']==12){
-            echo'
-          <textarea rows="1" cols="150" style="display:block;">'.$tabP['label_proposition'].'</textarea>
-          ';
+              echo '<input type="hidden" name="id'.$tabP['ID_proposition'].'" value="'.$tabP['ID_proposition'].'"/>';
+              echo'<textarea name="proposition'.$tabP['ID_proposition'].'" rows="1" cols="110" style="display:block;">'.$tabP['label_proposition'].'</textarea>';
             }
-        }?>
+          }
+        ?>
+        <input type="submit" class="boutton" style="background-color: #27ae60; font-size: 1em; padding: 0.3em 0.3em 0.3em 0.3em; color:white;" value="Enregistrer">
       </div>
     </div>
 
@@ -274,7 +321,7 @@
 
 
 
-  </form>
+  <!-- </form> -->
 
 </div>
 

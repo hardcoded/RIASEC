@@ -23,7 +23,7 @@
 						<p class="navbar-text">Bonjour <?php echo $admin['login']; ?></p>
           </div>
 					<div class="navbar-header">
-						<form action="index.php?section=editQCM" method="post" >
+						<form action="index.php?section=edit" method="post" >
 	  					<button type="submit" class="btn btn-link navbar-btn">Modifier questionnaire</button>
 	  				</form>
 					</div>
