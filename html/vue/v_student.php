@@ -82,7 +82,7 @@
 
 		<script>
 			var profil = Profil(ar);
-			document.getElementById('message').innerHTML = 'D\'après vos réponses au questionnaire RIASEC, vous avez un profil de type <a href = "?section=profils&profil=' + profil + '">' + profil + '</a>';
+			document.getElementById('message').innerHTML = 'D\'après vos réponses au questionnaire RIASEC, vous avez un profil de type <a href="?section=profils&profil=' + profil + '" style="color:white; font-size:1,2em;">' + profil + '</a>';
 		</script>
 
 
