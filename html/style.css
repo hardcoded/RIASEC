@@ -185,10 +185,10 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
+    width: 12%;
     background-color: #2c3e50;
     height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
+    position: absolute; /* Make it stick, even on scroll */
     overflow: auto;
 }
 
@@ -216,6 +216,7 @@ li a:hover {
 }
 table {
     border-collapse: collapse;
+
 }
 
 table, th, td {

@@ -19,7 +19,7 @@
 	<div class="titreProfil">
 		Profils
 	</div>
-	<div>
+	<div class="profilHandler">
 	<ul>
 	  <li><a href="?section=profils&profil=realiste">Réaliste</a></li>
 	  <li><a href="?section=profils&profil=investigatif" >Investigatif</a></li>
