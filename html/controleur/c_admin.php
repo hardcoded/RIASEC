@@ -30,7 +30,7 @@
                      'graduation' => $_POST['graduation']);
 
       $checkProm = $promModel->checkProm($promo);
-      if ($checkProm === false) {
+      if ($checkProm == -1) {
         $newProm = $promModel->createProm($promo);
         $session = array('code' => $_POST['codeSession'],
                          'date' => date('Y-m-d'),

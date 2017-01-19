@@ -5,6 +5,7 @@ require_once "DatabaseConnection.php";
 /**
  * Classe abstraite permettant de factoriser certaines fonctions
  * communes à toutes les classes de modèles
+ * @author JohanBrunet
  */
 abstract class Model {
 

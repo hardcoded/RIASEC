@@ -18,6 +18,11 @@
      */
     protected $table = 'prom';
 
+    /**
+     * Création d'une nouvelle promotion
+     * @param array $prom Tableau contenant les informations sur la promotion
+     * @return int ID du nouvel enregistrement
+     */
     public function createProm($prom) {
       try {
         $sql = "INSERT INTO ".$this->table." (department, year_prom, graduation_year) VALUES (:dep, :year, :grad)";
@@ -32,11 +37,20 @@
       }
     }
 
+    /**
+     * Supprimer une promotion
+     * @param int $promID Identifiant de la promotion à supprimer
+     */
     public function deleteProm($promID) {
       $sql = "DELETE FROM ".$this->table." WHERE ".$pk_key." = :promID";
       $req = $this->query($sql, array(':promID' => $promID));
     }
 
+    /**
+     * Vérifier si une promotion existe
+     * @param array $promo informations sur la promotion à vérifier
+     * @return int identifiant de la promotion si elle existe, -1 sinon
+     */
     public function checkProm($promo) {
       $proms = $this->getAll();
 
@@ -46,7 +60,7 @@
           break;
         }
         else {
-          $res = false;
+          $res = -1;
         }
       }
       return $res;

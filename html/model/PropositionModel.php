@@ -22,6 +22,12 @@
      */
     protected $table = 'proposition';
 
+    /**
+     * Modifier l'intitulé d'une question
+     * @param string $id identifiant de la question
+     * @param int $group groupe auquel appartient la question
+     * @param string $newLabel nouvel intitulé de la question
+     */
     public function editLabel($id, $group, $newLabel) {
       try {
         $sql = "UPDATE ".$this->table." SET label_proposition = :newLabel WHERE ".$this->pk_key_id." = :id AND ".$this->pk_key_grp." = :group;";
@@ -35,17 +41,22 @@
       }
     }
 
-  public function getByGroup($group) {
-    try {
-      $sql = "SELECT * FROM ".$this->table." WHERE ".$this->pk_key_grp." = :group";
-      $req = $this->query($sql,array(":group"=> $group));
-      $res = $req->fetchAll(PDO::FETCH_ASSOC);
-      return $res;
+    /**
+     * Récupération des questions du même groupe
+     * @param int $group identifiant du groupe de questions à récupérer
+     * @return array tableau associatif contenant les questions du groupe
+     */
+    public function getByGroup($group) {
+      try {
+        $sql = "SELECT * FROM ".$this->table." WHERE ".$this->pk_key_grp." = :group";
+        $req = $this->query($sql,array(":group"=> $group));
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors de la selection de l\'objet dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
     }
-    catch(PDOException $e){
-      exit('<p>Erreur lors de la selection de l\'objet dans la table : '.$this->table
-           .'<br/>'.$e->getMessage().'</p>');
-    }
-  }
 }
 ?>
