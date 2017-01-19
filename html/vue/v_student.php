@@ -19,7 +19,7 @@
 	</head>
 	<body style="background-color: #34495e;">
 
-    <div class="navbar navbar-inverse" style="margin-bottom: -20px" role="navigation">
+    <div class="navbar navbar-inverse" style="margin-bottom: 0px" role="navigation">
       <div class="container-fluid">
           <div class="navbar-header">
               <p class="navbar-text">Bonjour <?php echo $student['first_name'].' '.$student['last_name']; ?></p></li>
