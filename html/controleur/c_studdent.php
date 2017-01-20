@@ -14,23 +14,28 @@
   }
   else {
     $data = $authController->decodeToken($_COOKIE['token'])['data'];
-    $student = $studentModel->getById($data['userID']);
-    $results = $resultModel->getByStudent($student['ID_student']);
-    $resArray = [$results[0]['percentage'],
-                 $results[1]['percentage'],
-                 $results[2]['percentage'],
-                 $results[3]['percentage'],
-                 $results[4]['percentage'],
-                 $results[5]['percentage']];
-
-    if ($_GET['type'] == 'code') {
-      if ($sessionModel->checkSession($_POST['codeSession'], $student) === true) {
-        header('Location: ./?section=qcm');
-      }
-      else {
-        $error = '<div class="alert alert-danger">Code incorrect</div>';
-      }
+    if ($data['role'] != 'student') {
+      header('Location: ./?section=admin');
     }
-    include_once('vue/v_student.php');
+    else {
+      $student = $studentModel->getById($data['userID']);
+      $results = $resultModel->getByStudent($student['ID_student']);
+      $resArray = [$results[0]['percentage'],
+                   $results[1]['percentage'],
+                   $results[2]['percentage'],
+                   $results[3]['percentage'],
+                   $results[4]['percentage'],
+                   $results[5]['percentage']];
+
+      if ($_GET['type'] == 'code') {
+        if ($sessionModel->checkSession($_POST['codeSession'], $student) === true) {
+          header('Location: ./?section=qcm');
+        }
+        else {
+          $error = '<div class="alert alert-danger">Code incorrect</div>';
+        }
+      }
+      include_once('vue/v_student.php');
+    }
   }
 ?>
