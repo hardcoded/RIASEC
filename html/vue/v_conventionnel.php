@@ -101,3 +101,11 @@
 		  </tr>
 		</table> 
 	</div>
+
+	 <div text-align="center">
+  	Revenir à mes résultats <a href = "?=section='résultats'">ici </a>
+  	</div>
+
+
+	</body>
+</html>
